@@ -17,7 +17,6 @@ ReactDOM.render(
       <Route path="about" element={ <About/> } />
       <Route path="resume" element={ <Resume/> } />
       <Route path="contact" element={ <Contact/> } />
-
     </Routes>
 
   </BrowserRouter>,
