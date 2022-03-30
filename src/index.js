@@ -7,7 +7,7 @@ import Nav from './Nav';
 import Resume from './Resume';
 import Contact from './Contact';
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById('root');
 ReactDOM.render(
   <BrowserRouter>
     <Nav />
@@ -18,7 +18,6 @@ ReactDOM.render(
       <Route path="resume" element={ <Resume/> } />
       <Route path="contact" element={ <Contact/> } />
     </Routes>
-
   </BrowserRouter>,
   rootElement
 );
