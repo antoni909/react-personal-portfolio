@@ -24,7 +24,8 @@ const mediaList = [
 
 const Nav = () => {
   return (
-
+    // TODO: Scroll-to feature 
+    // TODO: Go-to feature
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <Drawer
