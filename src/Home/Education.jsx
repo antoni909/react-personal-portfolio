@@ -1,7 +1,7 @@
 
-function Education() {
+const Education = () => {
   return (
-    <div >
+    <>
       <h1>Education</h1>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -17,7 +17,7 @@ function Education() {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac.
       </p>
-    </div>
+    </>
   );
 }
 

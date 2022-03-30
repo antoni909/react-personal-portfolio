@@ -1,6 +1,6 @@
-function SkillSet() {
+const SkillSet = () => {
   return (
-    <div >
+    <>
       <h1>SkillSet</h1>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -16,7 +16,7 @@ function SkillSet() {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac.
       </p>
-    </div>
+    </>
   );
 }
 

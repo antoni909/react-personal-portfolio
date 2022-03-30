@@ -22,7 +22,7 @@ const mediaList = [
   {text: 'LinkedIn', url: 'https://www.linkedin.com/in/lorenzo-ortega-antoni/'  },
 ]
 
-function Nav() {
+const Nav = () => {
   return (
 
     <Box sx={{ display: 'flex' }}>
@@ -62,9 +62,7 @@ function Nav() {
           ))}
         </List>
       </Drawer>
-
       <Outlet/>
-
       <Box
         component="main"
         sx={{ flexGrow: 1, bgcolor: 'background.default', p: 5 }}

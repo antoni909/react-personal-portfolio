@@ -1,6 +1,12 @@
-function Contact() {
+import { useNavigate } from 'react-router-dom'
+import Button from '@mui/material/Button';
+import { useStyles } from '../Theme/theme'
+
+const Contact = () => {
+  const classes = useStyles();
+  const navigate = useNavigate()
   return (
-    <div >
+    <>
       <h1>Contact</h1>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -16,7 +22,15 @@ function Contact() {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac.
       </p>
-    </div>
+      <Button 
+            className={classes.Button}
+            color="primary"
+            onClick={() => navigate('/') }
+            size="medium"
+            variant="contained"
+          > home 
+      </Button>
+    </>
   );
 }
 

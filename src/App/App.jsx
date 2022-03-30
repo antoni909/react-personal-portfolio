@@ -5,7 +5,6 @@ import About from '../About/About';
 import Resume from '../Resume/Resume';
 import Contact from '../Contact/Contact';
 
-
 function App() {
   return (
     <BrowserRouter>

@@ -1,6 +1,6 @@
-function WhyMe() {
+const WhyMe = () => {
   return (
-    <div >
+    <>
       <h1>Why Me?</h1>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -16,7 +16,7 @@ function WhyMe() {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac.
       </p>
-    </div>
+    </>
   );
 }
 

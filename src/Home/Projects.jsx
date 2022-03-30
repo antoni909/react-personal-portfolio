@@ -1,6 +1,6 @@
-function Projects() {
+const Projects = () => {
   return (
-    <div >
+    <>
       <h1>Projects</h1>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -16,7 +16,7 @@ function Projects() {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac.
       </p>
-    </div>
+    </>
   );
 }
 
