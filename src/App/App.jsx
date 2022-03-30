@@ -1,9 +1,9 @@
 import React from 'react';
-import Nav from './Nav';
+import Nav from '../Navigation/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './About';
-import Resume from './Resume';
-import Contact from './Contact';
+import About from '../About/About';
+import Resume from '../Resume/Resume';
+import Contact from '../Contact/Contact';
 
 
 function App() {

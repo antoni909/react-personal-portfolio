@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Home from './Home'
+import Home from '../Home/Home'
 import { Outlet, Link } from 'react-router-dom';
 
 import { SocialIcon } from 'react-social-icons';
@@ -67,7 +67,7 @@ function Nav() {
 
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 5 }}
       >
         <Home />
       </Box>
