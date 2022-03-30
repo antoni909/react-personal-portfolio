@@ -56,7 +56,7 @@ const Nav = () => {
               button
               key={item.text}
             >
-              <SocialIcon style={{ height: 40, width: 40 }} url={item.url} />
+              <SocialIcon style={{ height: 40, width: 40 }} url={item.url} target="_blank" rel="noreferrer noopener" />
               {/* <ListItemText primary={item.text} /> */}
             </ListItem>
           ))}
