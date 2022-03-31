@@ -1,21 +1,82 @@
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+
+// TODO: set-up GH API for use in this app
+// TODO: each project will display all collaborators & clickable avatar
+// TODO: create a Search Feature that allows the user to search all repos
 const Projects = () => {
   return (
     <>
       <h1>Projects</h1>
-      <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-      </p>
+
+      <Box sx={{flexGrow: 1}}>
+        <Grid container spacing={2}>
+
+          <Grid item xs={4}>
+            <Card sx={{ maxWidth: 340 }}>
+              <CardHeader
+                title="title"
+                subheader="subheader"
+              />
+              <CardMedia
+                component="img"
+                height="340"
+                image="https://via.placeholder.com/300"
+                alt="describe the snippet"
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. 
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card sx={{ maxWidth: 340 }}>
+              <CardHeader
+                title="title"
+                subheader="subheader"
+              />
+              <CardMedia
+                component="img"
+                height="340"
+                image="https://via.placeholder.com/300"
+                alt="describe the snippet"
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. 
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card sx={{ maxWidth: 340 }}>
+              <CardHeader
+                title="title"
+                subheader="subheader"
+              />
+              <CardMedia
+                component="img"
+                height="340"
+                image="https://via.placeholder.com/300"
+                alt="describe the snippet"
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. 
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+
+        </Grid>
+      </Box>
     </>
   );
 }
