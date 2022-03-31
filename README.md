@@ -4,4 +4,6 @@ my personal portfolio
 
 ## Attributions
 
-[Social Media Icons](https://www.npmjs.com/package/react-social-icons)
+Social media icons from [react-social-icons](https://www.npmjs.com/package/react-social-icons)
+
+Skills marquee component from [react-fast-marquee](https://www.npmjs.com/package/react-fast-marquee)
