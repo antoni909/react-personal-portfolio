@@ -1,5 +1,6 @@
 import About from './About'
 import Education from './Education'
+import Paper from '@mui/material/Paper';
 import Projects from './Projects'
 import SkillSet from './SkillSet'
 
@@ -18,7 +19,9 @@ const Home = () => {
           <Projects />
         </Grid>
         <Grid item xs={12}>
-          <SkillSet />
+          <Paper elevation={3}>
+            <SkillSet />
+          </Paper>
         </Grid>
         <Grid item xs={12}>
           <Education />
