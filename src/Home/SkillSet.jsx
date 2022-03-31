@@ -53,20 +53,3 @@ const SkillSet = () => {
 }
 
 export default SkillSet;
-/*
-        <Stack direction="row" spacing={6}> 
-          {/* <Chip icon={<JavascriptFill color="yellow" size={35} />} />
-          <Chip icon={<ReactFill color="#89CFF0" size={35} />} />
-          <Chip icon={<HtmlFill color="red" size={35} />} />
-          <Chip icon={<CssFill color="#8ab9f1" size={35} />} />
-          <Chip icon={<ReduxFill color="red" size={35} />} />
-          <Chip icon={<VscodeFill color="purple" size={35} />} />
-          <Chip icon={<GithubFill color="grey" size={35} />} />
-          <Chip icon={<NpmFill color="red" size={35} />} />
-          <Chip icon={<NodeFill color="green" size={35} />} />
-          <Chip icon={<GoogleFill color="yellow" size={35}/>} />
-          <Chip icon={<StackOverflowFill color="orange" size={35} />} />
-          <Chip icon={<SlackFill color="#87ceeb" size={35} />} />
-          <Chip icon={<BootstrapFill color="#ADD8E6" size={35} />} /> 
-        </Stack>
-*/
