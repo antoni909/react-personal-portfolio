@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from '../Navigation/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from '../Home/About';
 import Resume from '../Resume/Resume';
 import Contact from '../Contact/Contact';
 
