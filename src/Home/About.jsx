@@ -1,10 +1,6 @@
-import { useNavigate } from 'react-router-dom'
-import Button from '@mui/material/Button';
-import { useStyles } from '../Theme/theme'
 
 const About = () => {
-  const classes = useStyles();
-  const navigate = useNavigate()
+
   return (
     <>
       <h1>About</h1>
@@ -22,14 +18,6 @@ const About = () => {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac.
       </p>
-      <Button 
-            className={classes.Button}
-            color="primary"
-            onClick={() => navigate('/') }
-            size="medium"
-            variant="contained"
-          > home 
-      </Button>
     </>
   );
 }

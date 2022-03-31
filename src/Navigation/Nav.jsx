@@ -13,7 +13,6 @@ import { SocialIcon } from 'react-social-icons';
 
 const drawerWidth = 100;
 const menuList = [
-  {text: 'About', path: <Link style={{ textDecoration: 'none' }} to="/about">About</Link>},
   {text: 'Resume', path: <Link style={{ textDecoration: 'none' }} to="/resume">Resume</Link>},
   {text: 'Contact', path: <Link style={{ textDecoration: 'none' }} to="/contact">Contact</Link>}
 ]
@@ -58,7 +57,6 @@ const Nav = () => {
               key={item.text}
             >
               <SocialIcon style={{ height: 40, width: 40 }} url={item.url} target="_blank" rel="noreferrer noopener" />
-              {/* <ListItemText primary={item.text} /> */}
             </ListItem>
           ))}
         </List>
