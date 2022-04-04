@@ -1,15 +1,33 @@
+import About from './About'
 import Education from './Education'
+import Paper from '@mui/material/Paper';
 import Projects from './Projects'
 import SkillSet from './SkillSet'
 
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+
 const Home = () => {
   return (
-    <>
+    <Box sx={{flexGrow: 1}}>
       <h1>Home Component</h1>
-      <SkillSet />
-      <Education />
-      <Projects />
-    </>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <About />
+        </Grid>
+        <Grid item xs={12}>
+          <Projects />
+        </Grid>
+        <Grid item xs={12}>
+          <Paper elevation={3}>
+            <SkillSet />
+          </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Education />
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 
