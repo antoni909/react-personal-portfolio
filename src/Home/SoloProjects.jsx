@@ -11,8 +11,9 @@ import Typography from '@mui/material/Typography';
 // CHANGE: swap Card with ImageList implementation
 
 const SoloProjects = () => {
+  // const { data, isPending, error } = useOctokit('/user/repos')
+  const { data, isPending, error } = useOctokit(`/users/${process.env.REACT_APP_USER}/repos?per_page=45&sort=updated`)
 
-  const { data, isPending, error } = useOctokit('GET /user/repos')
   console.log('data',data)
 
   // PROPERTIES: name, description, private or visibility, homepage
@@ -21,46 +22,45 @@ const SoloProjects = () => {
     if(!data) return <>No Data</>
     else{
       return(
-        <Box sx={{flexGrow: 1}}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              {data && data.map( repo => (
-
-                <Card
-                  key={repo.name} 
-                  sx={{ maxWidth: 340 }}
-                >
-                  <CardHeader
-                    title={repo.name}
-                    // subheader={repo.description}
-                  />
-                  {/* <CardMedia
-                    component="img"
-                    height="340"
-                    image="https://via.placeholder.com/300"
-                    alt="describe the snippet"
-                  /> */}
-                  <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                      {repo.description} 
-                    </Typography>
-                  </CardContent>
-                </Card>
-
-              ))}
+        <>
+          <Box sx={{flexGrow: 1}}>
+            <Grid container spacing={1}>
+                {data && data.map( repo => (
+                  <Grid 
+                    key={repo.name} 
+                    item 
+                    xs={4}
+                  >
+                    <Card
+                      sx={{ maxWidth: 340 }}
+                    >
+                      <CardHeader
+                        title={repo.name}
+                        // subheader={repo.description}
+                      />
+                      {/* <CardMedia
+                        component="img"
+                        height="340"
+                        image="https://via.placeholder.com/150"
+                        alt="describe the snippet"
+                      /> */}
+                      <CardContent>
+                        <Typography variant="body2" color="text.secondary">
+                          {repo.description} 
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                ))}
             </Grid>
-          </Grid>
-        </Box>
+          </Box>
+
+        </>
       )
     }
   }
 
-  return (
-    <>
-      { mapData(data, isPending, error) }
-    </>
-  
-    );
+  return (<> { mapData(data, isPending, error) } </>);
 }
 
 export default SoloProjects;

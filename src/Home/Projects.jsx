@@ -1,5 +1,5 @@
 import SoloProjects from './SoloProjects'
-import GroupProjects from './GroupProjects'
+import OrgProjects from './OrgProjects'
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -14,13 +14,7 @@ const Projects = () => {
   return (
     <>
       <h1>Group Projects</h1>
-      <Box sx={{flexGrow: 1}}>
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <GroupProjects />
-          </Grid>
-        </Grid>
-      </Box>
+      <OrgProjects />
       
       <h1>Solo Projects</h1>
       <SoloProjects />

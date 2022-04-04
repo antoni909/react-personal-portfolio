@@ -9,7 +9,7 @@ export const useOctokit = (url) => {
   const [isPending, setPending] = useState(true)
   const [error, setError] = useState('')
 
-  const getRepos = async() => {
+  const getData = async() => {
     let response
 
     if(cache[url]){
@@ -31,7 +31,7 @@ export const useOctokit = (url) => {
 
   useEffect( () => {
     if(!url) return
-    // getRepos()
+    // getData()
   },[url])
 
   return { data, isPending, error }
