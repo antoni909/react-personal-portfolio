@@ -1,22 +1,33 @@
+// import { useStyles } from '../Theme/theme'
+import cf_cert from '../Assets/cf_cert.png'
+
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 
 const Education = () => {
+  // const classes = useStyles();
   return (
     <>
-      <h1>Education</h1>
-      <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-      </p>
+        <Box sx={{flexGrow: 1}}>
+          <h1>Education</h1>
+          <Grid container spacing={2}>
+            <Grid item xs={3}>
+              <Paper>
+                <img 
+                  alt="Code Fellows Certification" 
+                  src={cf_cert} 
+                  sx={{ width: '25%', height: '25%'}}
+                />
+              </Paper>
+            </Grid>
+            <Grid item xs={9}>
+              <p>
+              My greatest aspiration is to become a professional in the Tech Industry as a Software Developer. I continue to grow by being adaptive and malleable to new concepts and paradigms. My willingness to work in a team is paramount to my conceptual knowledge and growth. I want to be an effective and approachable developer that is always willing to teach those around me.
+              </p>
+            </Grid>
+          </Grid>
+        </Box>
     </>
   );
 }

@@ -1,8 +1,5 @@
-import SoloProjects from './SoloProjects'
+// import SoloProjects from './SoloProjects'
 import OrgProjects from './OrgProjects'
-
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 
 // TODO: set-up GH API for use in this app
 // await octokit.request('GET /user/repos')
@@ -17,7 +14,7 @@ const Projects = () => {
       <OrgProjects />
       
       <h1>Solo Projects</h1>
-      <SoloProjects />
+      {/* <SoloProjects /> */}
     </>
   );
 }
