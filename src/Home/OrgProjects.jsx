@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useOctokit } from '../Hooks/useOctokit'
 // import { useGetOrgs } from '../Hooks/useGetOrgs'
 
@@ -39,59 +39,66 @@ healthy_queue:{
   },
 }
 const OrgProjects = () => {
-  const [ list, setList ] = useState([])
-  const [ org, setOrg ] = useState({})
   
+  const [ list, setList ] = useState([])
+  const [ orgObj, setOrgObj ] = useState({})
+
   // const { data } = useOctokit(`/orgs/${'Team-Meow'}/members`)
   // const { orgData } = useGetOrgs('/user/orgs')
   
-  const getOrgMembers = async () => {
-    let store = []
+  const getOrgMembers = async (obj) => {
     let res
-    for(const [key,value] of Object.entries(cpd)){
-      console.log('key: ',key,'value: ', value)
-      // console.log(`/orgs/${value.orgName}/members`)
+    for(const [key,value] of Object.entries(obj)){
       res = await octokit.request(`/orgs/${value.orgName}/members`, {org: 'org'})
       const membersList = res.data
-      console.log('cpd[key]',cpd[key] = {...cpd[key],membersList: [...membersList]})
-      console.log('cpd',cpd)
-
+      obj[key] = {...obj[key],membersList: [...membersList]}
     }
-
+    setOrgObj({...obj})
+    if(orgObj)createOrgList(orgObj)
   }
 
-  getOrgMembers(cpd)
-
+  const createOrgList = (obj) => Object.entries(obj).forEach(([key, value]) => setList([...list,value]))
+  
   useEffect( () => {
 
-  },[])
+      if(cpd)getOrgMembers(cpd) 
 
+  },[])
+  
+  console.log(list && list.map(org => console.log(org)))
+  
   return (
     <>
 
       <Box sx={{flexGrow: 1}}>
         <Grid container spacing={2}>
-          { 
-            <Grid item xs={4}>
-              <Card sx={{ maxWidth: 340 }}>
-              <CardHeader
-                title="title"
-                subheader="subheader"
-              />
-              <CardMedia
-                component="img"
-                height="340"
-                image="https://via.placeholder.com/300"
-                alt="describe the snippet"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. 
-                </Typography>
-              </CardContent>
-              </Card>
-            </Grid>
-          }
+          {/* {data && data.map( repo => ( */}
+                   <Grid 
+                    //  key={repo.name} 
+                     item 
+                     xs={4}
+                   >
+                     <Card
+                       sx={{ maxWidth: 340 }}
+                     >
+                       <CardHeader
+                        //  title={repo.name}
+                        //  subheader={repo.description}
+                       />
+                       {/* <CardMedia
+                         component="img"
+                         height="340"
+                         image="https://via.placeholder.com/150"
+                         alt="describe the snippet"
+                       /> */}
+                       <CardContent>
+                         <Typography variant="body2" color="text.secondary">
+                           {/* {repo.description}  */}
+                         </Typography>
+                       </CardContent>
+                     </Card>
+                   </Grid>
+              // ))}
         </Grid>
       </Box>
 
