@@ -1,15 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { octokit } from '../Utils/gh';
 
 // TODO: refactor to use hook useRef()
+// FIX: repeated data in state: cache 
 export const useGetOrgs = ( url ) => {
+
   const [cache, setCache] = useState({})
-  const [data, setData] = useState([])
   const [orgData, setOrgData] = useState({})
   const [isPending, setPending] = useState(true)
   const [error, setError] = useState('')
 
   const makeOrgs = async (rawOrgData) => {
+    // console.log('raw',rawOrgData)
     let obj = {}
     rawOrgData.forEach( org => {
       let keyName = org.login.replace(/-/g,'_')
@@ -20,17 +22,19 @@ export const useGetOrgs = ( url ) => {
 }
 
   const getData = async() => {
-    let response
+
     if(cache[url]){
-      console.log('cache hit',cache)
-      setData([...cache[url]])
+      // console.log('cache hit',cache)
+      makeOrgs(cache[url])
       setPending(false)
-    }else{
-        console.log('cache miss',cache)
-        response = await octokit.request(url, {org: 'org'})
-        setCache(cache[url] = await response.data)
+    }
+    else{
+        // console.log('cache miss',cache)
+        const response = await octokit.request(url, {org: 'org'})
+        
         if(response.status === 200){
-          setData(response.data)
+          setCache(cache[url] = await response.data)
+          makeOrgs(cache[url])
           setPending(false)
         }else{
           setError('could not fetch data')
@@ -41,11 +45,11 @@ export const useGetOrgs = ( url ) => {
  
   useEffect( () => {
     if(!url) return
-    else {
-      getData()
-      if( data ) makeOrgs( data )
+    else { 
+      getData()  
     } 
   },[url])
 
   return { orgData, isPending, error }
 }
+
