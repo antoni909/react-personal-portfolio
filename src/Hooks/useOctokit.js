@@ -33,7 +33,7 @@ export const useOctokit = (url) => {
 
   useEffect( () => {
     if(!url) return
-    // getData()
+    getData()
   },[url])
 
   return { data, isPending, error }

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
-import { useOctokit } from '../Hooks/useOctokit'
+// import { useOctokit } from '../Hooks/useOctokit'
+import { octokit } from '../Utils/gh';
 // import { useGetOrgs } from '../Hooks/useGetOrgs'
 
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { octokit } from '../Utils/gh';
 
 // TODO map over orgs to render Name, Members Name/Avatar, Description, url
 const cpd = {
@@ -38,71 +40,83 @@ healthy_queue:{
   orgRepos: "https://api.github.com/orgs/healthy-queue/repos"
   },
 }
+
 const OrgProjects = () => {
-  
+
   const [ list, setList ] = useState([])
-  const [ orgObj, setOrgObj ] = useState({})
 
   // const { data } = useOctokit(`/orgs/${'Team-Meow'}/members`)
   // const { orgData } = useGetOrgs('/user/orgs')
-  
+
   const getOrgMembers = async (obj) => {
-    let res
-    for(const [key,value] of Object.entries(obj)){
+    let res, tempList
+    for( let [key,value] of Object.entries(obj)){
       res = await octokit.request(`/orgs/${value.orgName}/members`, {org: 'org'})
-      const membersList = res.data
-      obj[key] = {...obj[key],membersList: [...membersList]}
+      obj[key] = { ...value, membersList:[ ...res.data ] }
     }
-    setOrgObj({...obj})
-    if(orgObj)createOrgList(orgObj)
+    tempList = [...Object.values(obj)]
+    return setList([...tempList])
   }
 
-  const createOrgList = (obj) => Object.entries(obj).forEach(([key, value]) => setList([...list,value]))
-  
-  useEffect( () => {
+  const renderAvatars = (list) => {
+    const avatarList = list.map( member => {
+      return (
+          <Avatar
+            sizes='medium'
+            alt={`profile of ${member.login}`}
+            onClick={()=> window.open(member.html_url)}
+            src={ member.avatar_url }
+          />
+      )
+    })
+    return ( avatarList )
+  }
 
-      if(cpd)getOrgMembers(cpd) 
-
+  useEffect( () => { 
+    getOrgMembers(cpd)
   },[])
-  
-  console.log(list && list.map(org => console.log(org)))
-  
+
   return (
-    <>
 
       <Box sx={{flexGrow: 1}}>
         <Grid container spacing={2}>
-          {/* {data && data.map( repo => ( */}
-                   <Grid 
-                    //  key={repo.name} 
-                     item 
-                     xs={4}
-                   >
-                     <Card
-                       sx={{ maxWidth: 340 }}
-                     >
-                       <CardHeader
-                        //  title={repo.name}
-                        //  subheader={repo.description}
-                       />
-                       {/* <CardMedia
-                         component="img"
-                         height="340"
-                         image="https://via.placeholder.com/150"
-                         alt="describe the snippet"
-                       /> */}
-                       <CardContent>
-                         <Typography variant="body2" color="text.secondary">
-                           {/* {repo.description}  */}
-                         </Typography>
-                       </CardContent>
-                     </Card>
-                   </Grid>
-              // ))}
+          {list && list.map( org => ( 
+            <Grid 
+              key={org.orgRepos} 
+              item 
+              xs={4}
+            >
+              <Card
+                sx={{ maxWidth: 340 }}
+              >
+                <CardHeader
+                  title={ org.orgName }
+                />
+                <CardMedia
+                  component="img"
+                  height="150"
+                  image="https://via.placeholder.com/150"
+                  alt="describe the snippet"
+                />
+                <CardContent>
+                  <Stack 
+                    direction="row" 
+                    spacing={2}
+                  >
+                  <Typography 
+                    variant="body2" 
+                    color="text.secondary"
+                  >
+                    Collaborators
+                  </Typography>
+                   { renderAvatars(org.membersList) }
+                </Stack>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Box>
-
-    </>
 
   );
 }
