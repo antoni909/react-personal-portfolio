@@ -9,16 +9,18 @@ export const useOctokit = (url) => {
   const [isPending, setPending] = useState(true)
   const [error, setError] = useState('')
 
-  const getRepos = async() => {
+  const getData = async() => {
     let response
 
     if(cache[url]){
-      setData(cache[url])
-      setPending(false)
       console.log('cache hit')
+      const data = cache[url]
+      setData(data)
+      setPending(false)
     }else{
         console.log('cache miss')
-        response = await octokit.request(url)
+        response = await octokit.request(url, {org: 'org'})
+        cache[url] = response.data
         if(response.status === 200){
           setData(response.data)
           setPending(false)
@@ -31,7 +33,7 @@ export const useOctokit = (url) => {
 
   useEffect( () => {
     if(!url) return
-    // getRepos()
+    getData()
   },[url])
 
   return { data, isPending, error }
