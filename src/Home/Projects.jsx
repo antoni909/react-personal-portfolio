@@ -12,7 +12,6 @@ const Projects = () => {
     <>
       <h1>Group Projects</h1>
       <OrgProjects />
-      
       <h1>Solo Projects</h1>
       <SoloProjects />
     </>

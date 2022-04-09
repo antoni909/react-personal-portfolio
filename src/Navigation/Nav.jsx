@@ -18,6 +18,7 @@ const menuList = [
 ]
 const mediaList = [
   {text: 'GitHub', url: 'https://github.com/antoni909' },
+  {text: 'Discord', url: 'https://discord.com/channels/@me'  },
   {text: 'LinkedIn', url: 'https://www.linkedin.com/in/lorenzo-ortega-antoni/'  },
 ]
 
@@ -56,7 +57,12 @@ const Nav = () => {
               button
               key={item.text}
             >
-              <SocialIcon style={{ height: 40, width: 40 }} url={item.url} target="_blank" rel="noreferrer noopener" />
+              <SocialIcon 
+                style={{ height: 40, width: 40 }} 
+                url={item.url} 
+                target="_blank" 
+                rel="noreferrer noopener" 
+              />
             </ListItem>
           ))}
         </List>
