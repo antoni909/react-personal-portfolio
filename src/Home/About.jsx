@@ -2,7 +2,6 @@ import { useStyles } from '../Theme/theme'
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-// import Paper from '@mui/material/Paper';
 import pic from '../Assets/profile.jpeg'
 
 const About = () => {

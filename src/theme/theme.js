@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core'
-import landing from '../Assets/landing.jpg'
+import landing from '../Assets/landingII.jpg'
 
 export const useStyles = makeStyles( theme => ({
   button: {
@@ -13,7 +13,7 @@ export const useStyles = makeStyles( theme => ({
     marginTop: '10px', 
   },
   landingBackground: {
-    height: 1356,
+    height: 1400,
     backgroundImage: `url(${landing})`,
   },
   root: {
