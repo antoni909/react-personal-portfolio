@@ -11,11 +11,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { SocialIcon } from 'react-social-icons';
 
-const drawerWidth = 100;
+const drawerWidth = 150;
 const menuList = [
+  {text: 'Projects', path: <Link style={{ textDecoration: 'none' }} to="/solo_projects">GitHub Projects</Link>},
   {text: 'Resume', path: <Link style={{ textDecoration: 'none' }} to="/resume">Resume</Link>},
-  {text: 'Contact', path: <Link style={{ textDecoration: 'none' }} to="/contact">Contact</Link>},
-  {text: 'Projects', path: <Link style={{ textDecoration: 'none' }} to="/solo_projects">Projects</Link>}
+  {text: 'Contact', path: <Link style={{ textDecoration: 'none' }} to="/contact">Contact</Link>}
 ]
 const mediaList = [
   {text: 'GitHub', url: 'https://github.com/antoni909' },
