@@ -18,12 +18,12 @@ const relatedEd = [
   },
 ]
 // TODO: create class for Box parent and Card child items
+// TODO: create dropdown of skills gained after a relatedEd/program/school
 
 const Education = () => {
   // const classes = useStyles();
   const renderRelatedEd = ( list ) => {
     return list.map(item => (
-      <>
         <Card
         key={item.name}
         sx={{ 
@@ -60,9 +60,6 @@ const Education = () => {
             alt="certification"
           />
         </Card>
-        <p>some description of what was learned / skills gained</p>
-      </>
-
     ))
   }
 

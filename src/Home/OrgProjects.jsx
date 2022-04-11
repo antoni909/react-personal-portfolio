@@ -127,7 +127,6 @@ const OrgProjects = () => {
               </Card>
           ))}
       </Box>
-
   );
 }
 

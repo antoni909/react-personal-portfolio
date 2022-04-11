@@ -16,6 +16,8 @@ Social media icons from [react-social-icons](https://www.npmjs.com/package/react
 
 Skills marquee component from [react-fast-marquee](https://www.npmjs.com/package/react-fast-marquee)
 
+Programmer Quotes from [skolakoda](https://github.com/skolakoda/programming-quotes-api)
+
 ## Install
 
 ```sh
