@@ -1,31 +1,39 @@
 import { useState, useEffect } from 'react'
 import { useStyles } from '../Theme/theme'
-import pic from '../Assets/profile.jpeg'
+// import pic from '../Assets/profile.jpeg'
+import signature from '../Assets/name.png'
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-
 // TODO: adjust profile pic and text size/alignment
 
 const About = () => {
   const classes = useStyles();
   const [quote,setQuote] = useState([])
-  const [error,setError] = useState([])
+
+  const randomIdx = (min,max) => {
+    return Math.floor(Math.random()*(max-min+1)+min)
+  }
 
   const getProgrammerQuote = () => {
     fetch(process.env.REACT_APP_QUOTES_API)
       .then( res => {
-        if(!res.ok) setError([`HTTP err, status: ${res.status}`])
+        if(!res.ok) console.error('err',res)
         return res.json()
-      }).then(res => setQuote([...quote,{...res}]))
+      }).then(res => {
+        const idx = randomIdx(0,res.length)
+        setQuote([{...res[idx]}])}
+        )
   }
 
-  useState(()=>{
+  useEffect(()=>{
     getProgrammerQuote()
   },[])
   return (
-
         <Box 
           className={classes.landingBackground}
           sx={{ 
@@ -50,12 +58,12 @@ const About = () => {
               gutterBottom 
             > Web Developer
             </Typography>
-            <Typography
-              variant='h2'
-              component="div"
-              gutterBottom 
-            > Lorenzo A Ortega
-            </Typography>
+            <CardMedia
+                  component="img"
+                  height="105"
+                  image={ signature }
+                  alt="neon signature"
+                />
             <Typography
               variant='subtitle1'
               component="div"
@@ -66,30 +74,23 @@ const About = () => {
               My willingness to work in a team is paramount to my conceptual knowledge and growth. 
               I want to be an effective and approachable developer that is always willing to teach those around me.
             </Typography>
-          </Card>
             {
               quote
                 ? quote.map(item => (
                   <Typography
-                    key={item.id} 
+                    key={item.text} 
                     variant="h6" 
                     gutterBottom 
                     component="div"
                   >
-                  {item.en} 
+                  {item.text} 
                   {` - ${item.author}`}
                   </Typography>
                 ))
                 : null
             }
-
-          <img 
-            alt="Lorenzo Profile" 
-            src={pic} 
-            sx={{ width: 60, height: 60 }}
-          />
+          </Card>
         </Box>
-
   );
 }
 
