@@ -15,7 +15,7 @@ const SoloProjects = () => {
   const classes = useStyles();
 
   const { data, isPending, error } = useOctokit(`/users/${process.env.REACT_APP_USER}/repos?per_page=45&sort=updated`)
-  console.log('data',data)
+
   const mapData = (repos, pending,err) => {
     console.log('repos',repos)
     if(!repos) return <> No Data </>
@@ -34,10 +34,12 @@ const SoloProjects = () => {
                     >
                       <CardHeader
                         title={repo.name}
-                        // subheader={repo.description}
                       />
                       <CardContent>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography 
+                          variant="body2" 
+                          color="text.secondary"
+                        >
                           {repo.description} 
                         </Typography>
                       </CardContent>
@@ -46,13 +48,13 @@ const SoloProjects = () => {
                 ))}
             </Grid>
             <Button 
-            className={classes.Button}
-            color="primary"
-            onClick={() => navigate('/') }
-            size="medium"
-            variant="contained"
-          > home 
-      </Button>
+              className={classes.Button}
+              color="primary"
+              onClick={() => navigate('/') }
+              size="medium"
+              variant="contained"
+            > home 
+            </Button>
           </Box>
       )
     }

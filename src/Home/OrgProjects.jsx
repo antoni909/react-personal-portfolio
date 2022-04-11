@@ -76,7 +76,8 @@ const OrgProjects = () => {
   },[])
 
   return (
-      <Box 
+      <Box
+        // TODO: create class for Box parent and Card child items
         sx={{ 
           display: 'flex', 
           alignItems: 'center',
