@@ -62,6 +62,7 @@ const OrgProjects = () => {
     const avatarList = list.map( member => {
       return (
           <Avatar
+            key={member.login}
             sizes='medium'
             alt={`profile of ${member.login}`}
             onClick={()=> window.open(member.html_url)}

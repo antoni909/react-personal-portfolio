@@ -13,8 +13,11 @@ export const useStyles = makeStyles( theme => ({
     marginTop: '10px', 
   },
   landingBackground: {
-    height: 1400,
+    // height: 1400,
     backgroundImage: `url(${landing})`,
+    minHeight: '100vh',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   },
   root: {
     flexGrow: 1,

@@ -1,5 +1,8 @@
 import {useOctokit} from '../Hooks/useOctokit'
+import { useNavigate } from 'react-router-dom'
+import { useStyles } from '../Theme/theme'
 
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -8,6 +11,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 const SoloProjects = () => {
+  const navigate = useNavigate()
+  const classes = useStyles();
 
   const { data, isPending, error } = useOctokit(`/users/${process.env.REACT_APP_USER}/repos?per_page=45&sort=updated`)
   console.log('data',data)
@@ -40,6 +45,14 @@ const SoloProjects = () => {
                   </Grid>
                 ))}
             </Grid>
+            <Button 
+            className={classes.Button}
+            color="primary"
+            onClick={() => navigate('/') }
+            size="medium"
+            variant="contained"
+          > home 
+      </Button>
           </Box>
       )
     }
