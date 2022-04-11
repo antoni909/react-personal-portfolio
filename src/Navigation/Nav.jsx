@@ -71,7 +71,7 @@ const Nav = () => {
       <Outlet/>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 5 }}
+        sx={{ flexGrow: 1, bgcolor: 'white', p: 0 }}
       >
         <Home />
       </Box>

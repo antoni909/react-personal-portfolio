@@ -1,4 +1,3 @@
-import SoloProjects from './SoloProjects'
 import OrgProjects from './OrgProjects'
 
 // TODO: set-up GH API for use in this app
@@ -11,8 +10,6 @@ const Projects = () => {
     <>
       <h1>Group Projects</h1>
       <OrgProjects />
-      <h1>Solo Projects</h1>
-      <SoloProjects />
     </>
   );
 }

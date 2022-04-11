@@ -8,17 +8,16 @@ import Grid from '@mui/material/Grid';
 
 const Home = () => {
   return (
-    <Box sx={{flexGrow: 1}}>
-      <h1>Home Component</h1>
+    <Box >
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <About />
         </Grid>
         <Grid item xs={12}>
-          <Projects />
-        </Grid>
-        <Grid item xs={12}>
             <SkillSet />
+        </Grid>
+        <Grid item xs={12} >
+          <Projects />
         </Grid>
         <Grid item xs={12}>
           <Education />

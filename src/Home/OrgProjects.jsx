@@ -9,9 +9,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 
 // TODO map over orgs to render Name, Members Name/Avatar, Description, url
 const cpd = {
@@ -78,25 +76,43 @@ const OrgProjects = () => {
   },[])
 
   return (
-
-      <Box sx={{flexGrow: 1}}>
-        <Grid container spacing={2}>
+      <Box 
+        sx={{ 
+          display: 'flex', 
+          alignItems: 'center',
+          alignContent: 'space-around',  
+          flexWrap: 'wrap', 
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          p: 1,
+          m: 1,
+          // bgcolor: 'black',
+          borderRadius: 5 
+        }}
+      >
           {list && list.map( org => ( 
-            <Grid 
+            <Card
               key={org.orgRepos} 
-              item 
-              xs={4}
+              sx={{ 
+                maxWidth: 340,
+                display: 'flex', 
+                alignItems: 'center',
+                alignContent: 'space-around',  
+                flexWrap: 'wrap', 
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                p: 1,
+                m: 1,
+                borderRadius: 3  
+              }}
             >
-              <Card
-                sx={{ maxWidth: 340 }}
-              >
                 <CardHeader
                   title={ org.orgName }
                 />
                 <CardMedia
                   component="img"
-                  height="150"
-                  image="https://via.placeholder.com/150"
+                  height="200"
+                  image="https://via.placeholder.com/300"
                   alt="describe the snippet"
                 />
                 <CardContent>
@@ -104,19 +120,11 @@ const OrgProjects = () => {
                     direction="row" 
                     spacing={2}
                   >
-                  <Typography 
-                    variant="body2" 
-                    color="text.secondary"
-                  >
-                    Collaborators
-                  </Typography>
-                   { renderAvatars(org.membersList) }
-                </Stack>
+                   Members &nbsp; { renderAvatars(org.membersList) }
+                  </Stack>
                 </CardContent>
               </Card>
-            </Grid>
           ))}
-        </Grid>
       </Box>
 
   );
