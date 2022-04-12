@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core'
 import landing from '../Assets/landingII.jpg'
+import githubWallpaper from '../Assets/githubWallpaper.jpg'
 
 export const useStyles = makeStyles( theme => ({
   button: {
@@ -13,11 +14,16 @@ export const useStyles = makeStyles( theme => ({
     marginTop: '10px', 
   },
   landingBackground: {
-    // height: 1400,
     backgroundImage: `url(${landing})`,
     minHeight: '100vh',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+  },
+  ghBackground: {
+    backgroundImage: `url(${githubWallpaper})`,
+    backgroundSize: "contain",
+    backgroundRepeat: 'no-repeat',
+    height: "60vh",
   },
   root: {
     flexGrow: 1,

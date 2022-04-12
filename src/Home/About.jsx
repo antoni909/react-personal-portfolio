@@ -60,10 +60,10 @@ const About = () => {
             > Web Developer
             </Typography>
             <CardMedia
-              component="img"
-              height="105"
-              image={ signature }
-              alt="neon signature"
+                component="img"
+                height="105"
+                image={ signature }
+                alt="neon signature"
             />
             <Typography
               variant='subtitle1'

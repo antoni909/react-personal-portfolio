@@ -2,8 +2,8 @@ import {useOctokit} from '../Hooks/useOctokit'
 import { useNavigate } from 'react-router-dom'
 import { useStyles } from '../Theme/theme'
 import gh_logo from '../Assets/ghlogo.png'
+import githubWallpaper from '../Assets/githubWallpaper.jpg'
 
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -19,7 +19,6 @@ const SoloProjects = () => {
   const { data, isPending, error } = useOctokit(`/users/${process.env.REACT_APP_USER}/repos?per_page=45&sort=updated`)
 
   const mapData = (repos, pending,err) => {
-    // console.log('repos',repos)
     if(!repos) return <> No Data </>
     else{
       return(
@@ -97,8 +96,52 @@ const SoloProjects = () => {
       )
     }
   }
-
-  return (mapData(data, isPending, error));
+  //
+  return (
+    <>
+      <Box 
+        style={{
+          backgroundImage: `url(${githubWallpaper})`,
+          backgroundSize: "cover",
+          backgroundRepeat: 'no-repeat',
+          height: "60vh",
+          borderRadius: '4px',
+          display: 'flex', 
+          alignContent: 'center',
+          alignItems: 'center',
+          // flexDirection: 'row', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center',
+        }}
+      >
+        <Card 
+          sx={{
+            maxWidth: 500,
+            marginLeft: '20%', 
+            backgroundColor: 'transparent',
+            boxShadow: 'none',}}
+          >
+          <Typography
+            variant='h1'
+            component="div"
+          > Welcome
+          </Typography>
+          <Typography
+            variant='h4'
+            component="div"
+          > to my solo
+          </Typography>
+          <Typography
+            variant='h1'
+            component="div"
+            gutterBottom 
+          > GitHub Projects 🤓
+          </Typography>
+        </Card>
+      </Box>
+      {mapData(data, isPending, error)}
+    </>
+  );
 }
 
 export default SoloProjects;
