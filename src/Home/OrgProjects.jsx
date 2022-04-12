@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 // import { useOctokit } from '../Hooks/useOctokit'
 import { octokit } from '../Utils/gh';
 // import { useGetOrgs } from '../Hooks/useGetOrgs'
+import gh_logo from '../Assets/ghlogo.png'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -9,6 +10,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
+import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
 // TODO map over orgs to render Name, Members Name/Avatar, Description, url
@@ -71,6 +73,24 @@ const OrgProjects = () => {
     return ( avatarList )
   }
 
+  const renderGHAvatar = (list) => {
+    return (
+      <Chip
+        sx={{m:2}}
+        avatar={
+          <img
+            alt="github repo"
+            height="40"
+            src={gh_logo}
+          />
+        }
+        label="GH Repo"
+        // onClick={()=> window.open('url')}
+        variant="outlined"
+      />
+    )
+  }
+
   useEffect( () => { 
     getOrgMembers(cpd)
   },[])
@@ -123,8 +143,14 @@ const OrgProjects = () => {
                   >
                    Members &nbsp; { renderAvatars(org.membersList) }
                   </Stack>
+                  <Stack 
+                    direction="row" 
+                    spacing={1}
+                  >
+                   {renderGHAvatar(['url']) }
+                  </Stack>
                 </CardContent>
-              </Card>
+            </Card>
           ))}
       </Box>
   );

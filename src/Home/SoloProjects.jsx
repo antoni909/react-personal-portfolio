@@ -109,7 +109,6 @@ const SoloProjects = () => {
           display: 'flex', 
           alignContent: 'center',
           alignItems: 'center',
-          // flexDirection: 'row', 
           flexWrap: 'wrap', 
           justifyContent: 'center',
         }}
