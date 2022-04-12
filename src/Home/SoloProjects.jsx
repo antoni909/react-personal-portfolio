@@ -19,7 +19,7 @@ const SoloProjects = () => {
   const { data, isPending, error } = useOctokit(`/users/${process.env.REACT_APP_USER}/repos?per_page=45&sort=updated`)
 
   const mapData = (repos, pending,err) => {
-    console.log('repos',repos)
+    // console.log('repos',repos)
     if(!repos) return <> No Data </>
     else{
       return(
@@ -56,7 +56,7 @@ const SoloProjects = () => {
                     alignItems: 'center',
                     flexDirection: 'row', 
                     flexWrap: 'wrap', 
-                    justifyContent: 'flex-start',
+                    justifyContent: 'space-between',
                   }}
                 >
                   <Chip
@@ -74,12 +74,11 @@ const SoloProjects = () => {
                   <Typography 
                     component="div"
                     variant="subtitle1" 
-                    >{`Created ${repo.created_at}`} 
+                    >{`Created ${new Date(repo.created_at).toLocaleString().split(',')[0]}`} 
                   </Typography>
                 </Box>
                   <Typography 
                     component="div"
-                    gutterBottom 
                     variant="subtitle2" 
                     >{repo.description} 
                   </Typography>
