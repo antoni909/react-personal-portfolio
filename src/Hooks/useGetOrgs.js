@@ -11,7 +11,7 @@ export const useGetOrgs = ( url ) => {
   const [error, setError] = useState('')
 
   const makeOrgs = async (rawOrgData) => {
-    // console.log('raw',rawOrgData)
+    console.log('raw',rawOrgData)
     let obj = {}
     rawOrgData.forEach( org => {
       let keyName = org.login.replace(/-/g,'_')
@@ -31,7 +31,6 @@ export const useGetOrgs = ( url ) => {
     else{
         // console.log('cache miss',cache)
         const response = await octokit.request(url, {org: 'org'})
-        
         if(response.status === 200){
           setCache(cache[url] = await response.data)
           makeOrgs(cache[url])

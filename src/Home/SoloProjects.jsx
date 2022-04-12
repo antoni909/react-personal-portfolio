@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useStyles } from '../Theme/theme'
 import gh_logo from '../Assets/ghlogo.png'
 import githubWallpaper from '../Assets/githubWallpaper.jpg'
+import ScrollToTop from '../ScrollTo/ScrollToTop'
 
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -24,6 +25,7 @@ const SoloProjects = () => {
       return(
           <Box
             sx={{
+              backgroundColor: 'primary.dark',
               display: 'flex', 
               alignContent: 'center',
               alignItems: 'center',
@@ -84,6 +86,7 @@ const SoloProjects = () => {
               </CardContent>
               </Card>
             ))}
+            <ScrollToTop />
             <Button 
               className={classes.Button}
               color="primary"
@@ -96,7 +99,7 @@ const SoloProjects = () => {
       )
     }
   }
-  //
+
   return (
     <>
       <Box 
