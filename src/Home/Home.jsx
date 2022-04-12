@@ -2,12 +2,16 @@ import About from './About'
 import Education from './Education'
 import Projects from './Projects'
 import SkillSet from './SkillSet'
+import ScrollToTop from '../ScrollTo/ScrollToTop'
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
+// TODO: remove fixed menu to clickable hamburger menu to show/hide the menu
+
 const Home = () => {
   return (
+  
     <Box >
       <Grid container spacing={2}>
         <Grid item xs={12}>
@@ -23,6 +27,7 @@ const Home = () => {
           <Education />
         </Grid>
       </Grid>
+      <ScrollToTop />
     </Box>
   );
 }

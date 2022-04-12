@@ -23,6 +23,7 @@ const SoloProjects = () => {
     if(!repos) return <> No Data </>
     else{
       return(
+        <>
           <Box
             sx={{
               backgroundColor: 'primary.dark',
@@ -86,7 +87,6 @@ const SoloProjects = () => {
               </CardContent>
               </Card>
             ))}
-            <ScrollToTop />
             <Button 
               className={classes.Button}
               color="primary"
@@ -96,6 +96,9 @@ const SoloProjects = () => {
             > home 
             </Button>
           </Box>
+          <ScrollToTop />
+        </>
+
       )
     }
   }

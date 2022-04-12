@@ -13,6 +13,13 @@ export const useStyles = makeStyles( theme => ({
     },
     marginTop: '10px', 
   },
+  scrollButton: {
+    position: 'fixed',
+    fontSize: 60,
+    bottom: 20,
+    right: 20,
+    zIndex: 1
+  },
   landingBackground: {
     backgroundImage: `url(${landing})`,
     minHeight: '100vh',

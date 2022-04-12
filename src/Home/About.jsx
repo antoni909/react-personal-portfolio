@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useStyles } from '../Theme/theme'
-// import pic from '../Assets/profile.jpeg'
 import signature from '../Assets/name.png'
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
-// import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+
 // TODO: adjust profile pic and text size/alignment
 
 const About = () => {
@@ -18,19 +16,18 @@ const About = () => {
   const randomIdx = (min,max) => {
     return Math.floor(Math.random()*(max-min+1)+min)
   }
-
-  const getProgrammerQuote = () => {
-    fetch(process.env.REACT_APP_QUOTES_API)
-      .then( res => {
-        if(!res.ok) console.error('err',res)
-        return res.json()
-      }).then(res => {
-        const idx = randomIdx(0,res.length)
-        setQuote([{...res[idx]}])}
-        )
-  }
-
+  
   useEffect(()=>{
+    const getProgrammerQuote = () => {
+      fetch(process.env.REACT_APP_QUOTES_API)
+        .then( res => {
+          if(!res.ok) console.error('err',res)
+          return res.json()
+        }).then(res => {
+          const idx = randomIdx(0,res.length)
+          setQuote([{...res[idx]}])}
+          )
+    }
     getProgrammerQuote()
   },[])
 
