@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <>
       <h1>Group Projects</h1>
-      {/* <OrgProjects /> */}
+      <OrgProjects />
     </>
   );
 }

@@ -1,13 +1,15 @@
 import {useOctokit} from '../Hooks/useOctokit'
 import { useNavigate } from 'react-router-dom'
 import { useStyles } from '../Theme/theme'
+import gh_logo from '../Assets/ghlogo.png'
 
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
+import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 
 const SoloProjects = () => {
@@ -21,32 +23,69 @@ const SoloProjects = () => {
     if(!repos) return <> No Data </>
     else{
       return(
-          <Box sx={{flexGrow: 1}}>
-            <Grid container spacing={1}>
-                {repos && repos.map( repo => (
-                  <Grid 
-                    key={repo.name} 
-                    item 
-                    xs={4}
-                  >
-                    <Card
-                      sx={{ maxWidth: 340 }}
-                    >
-                      <CardHeader
-                        title={repo.name}
+          <Box
+            sx={{
+              display: 'flex', 
+              alignContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'row', 
+              flexWrap: 'wrap', 
+              justifyContent: 'center',
+              minHeight: '100vh',
+            }}
+          >
+            {repos && repos.map( repo => (
+              <Card
+                key={repo.name} 
+                sx={{ 
+                  maxWidth: 340, 
+                  minWidth: 340, 
+                  minHeight: 240,
+                  p: 1,
+                  m: 1, 
+                }}
+              >
+              <CardHeader
+                title={repo.name}
+              />
+              <CardContent>
+                <Box
+                  sx={{
+                    display:'flex',
+                    alignContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'row', 
+                    flexWrap: 'wrap', 
+                    justifyContent: 'flex-start',
+                  }}
+                >
+                  <Chip
+                    avatar={
+                      <img
+                        alt="github repo"
+                        height="40"
+                        src={gh_logo}
                       />
-                      <CardContent>
-                        <Typography 
-                          variant="body2" 
-                          color="text.secondary"
-                        >
-                          {repo.description} 
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
-            </Grid>
+                    }
+                    label="GH Repo"
+                    onClick={()=> window.open(repo.html_url)}
+                    variant="outlined"
+                  />
+                  <Typography 
+                    component="div"
+                    variant="subtitle1" 
+                    >{`Created ${repo.created_at}`} 
+                  </Typography>
+                </Box>
+                  <Typography 
+                    component="div"
+                    gutterBottom 
+                    variant="subtitle2" 
+                    >{repo.description} 
+                  </Typography>
+              </CardContent>
+              </Card>
+            ))}
             <Button 
               className={classes.Button}
               color="primary"

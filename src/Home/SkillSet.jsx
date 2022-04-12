@@ -1,7 +1,20 @@
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { 
-  ReactFill, HtmlFill, CssFill, VscodeFill, GithubFill, NpmFill, NodeFill, GoogleFill, StackOverflowFill, SlackFill, BootstrapFill, ReduxFill, JavascriptFill
+  BootstrapFill, 
+  CssFill, 
+  HtmlFill, 
+  GithubFill, 
+  GoogleFill, 
+  JavascriptFill,
+  ReactFill, 
+  NpmFill, 
+  SlackFill, 
+  StackOverflowFill, 
+  NodeFill,
+  PostgresqlFill,
+  ReduxFill, 
+  VscodeFill
 } from 'akar-icons';
 import Marquee from "react-fast-marquee";
 
@@ -46,6 +59,7 @@ const SkillSet = () => {
         <StackOverflowFill color="orange" size={35} />
         <SlackFill color="#87ceeb" size={35} />
         <BootstrapFill color="#ADD8E6" size={35} />
+        <PostgresqlFill color="#89CFF0" size={35} />
       </Box>
 
 

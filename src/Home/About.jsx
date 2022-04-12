@@ -5,8 +5,8 @@ import signature from '../Assets/name.png'
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
+// import CardContent from '@mui/material/CardContent';
+// import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 // TODO: adjust profile pic and text size/alignment
@@ -33,6 +33,7 @@ const About = () => {
   useEffect(()=>{
     getProgrammerQuote()
   },[])
+
   return (
         <Box 
           className={classes.landingBackground}
@@ -59,11 +60,11 @@ const About = () => {
             > Web Developer
             </Typography>
             <CardMedia
-                  component="img"
-                  height="105"
-                  image={ signature }
-                  alt="neon signature"
-                />
+              component="img"
+              height="105"
+              image={ signature }
+              alt="neon signature"
+            />
             <Typography
               variant='subtitle1'
               component="div"
