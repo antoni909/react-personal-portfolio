@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Home from '../Home/Home'
 import { Outlet, Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { SocialIcon } from 'react-social-icons';
 
-const drawerWidth = 150;
+const drawerWidth = 100;
 const menuList = [
   {text: 'Projects', path: <Link style={{ textDecoration: 'none' }} to="/solo_projects">GitHub Projects</Link>},
   {text: 'Resume', path: <Link style={{ textDecoration: 'none' }} to="/resume">Resume</Link>},
@@ -23,10 +22,13 @@ const mediaList = [
   {text: 'LinkedIn', url: 'https://www.linkedin.com/in/lorenzo-ortega-antoni/'  },
 ]
 
+// TODO: redesign navigation to instead use a hamburger menu
+// DONE: Scroll-to feature 
+// TODO: Go-to feature
 const Nav = () => {
+
   return (
-    // TODO: Scroll-to feature 
-    // TODO: Go-to feature
+
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <Drawer
@@ -42,7 +44,7 @@ const Nav = () => {
         anchor="left"
       >
         <List>
-          {menuList.map((item) => (
+          {menuList.map(( item ) => (
             <ListItem
               button
               key={item.text}
@@ -53,7 +55,7 @@ const Nav = () => {
         </List>
         < Divider />
         <List>
-          {mediaList.map((item,idx) => (
+          {mediaList.map(( item ) => (
             <ListItem
               button
               key={item.text}
@@ -71,7 +73,7 @@ const Nav = () => {
       <Outlet/>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'white', p: 0 }}
+        sx={{ flexGrow: 1,p: 0 }}
       >
         <Home />
       </Box>
