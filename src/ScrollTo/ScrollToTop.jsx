@@ -3,8 +3,8 @@ import { useStyles } from '../Theme/theme'
 
 import { FaChevronCircleUp } from 'react-icons/fa';
 
-// Refactor: button must remain Fixed on the screen
-// TODO: fix Scroll Button visibility
+// DONE: button must remain Fixed on the screen
+// DONE: fix Scroll Button visibility
 const ScrollToTop = () => {
   const [showScroll, setShowScroll] = useState(false)
   const classes = useStyles();
@@ -19,7 +19,6 @@ const ScrollToTop = () => {
   useEffect( () => { scrollEventHandler() },[])
 
   return (
-    
     <div 
       className={ classes.scrollButton } 
     >
@@ -31,9 +30,7 @@ const ScrollToTop = () => {
         : null
       } 
     </div>
-
   )
-
 
 }
 

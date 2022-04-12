@@ -20,6 +20,14 @@ export const useStyles = makeStyles( theme => ({
     right: 20,
     zIndex: 1
   },
+  toHomeButton: {
+    bottom: 20,
+    fontSize: 60,
+    marginBottom: 70,
+    position: 'fixed',
+    right: 20,
+    zIndex: 1
+  },
   landingBackground: {
     backgroundImage: `url(${landing})`,
     minHeight: '100vh',

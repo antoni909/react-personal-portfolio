@@ -1,16 +1,16 @@
+import gh_logo from '../Assets/ghlogo.png'
+import githubWallpaper from '../Assets/githubWallpaper.jpg'
 import {useOctokit} from '../Hooks/useOctokit'
 import { useNavigate } from 'react-router-dom'
 import { useStyles } from '../Theme/theme'
-import gh_logo from '../Assets/ghlogo.png'
-import githubWallpaper from '../Assets/githubWallpaper.jpg'
 import ScrollToTop from '../ScrollTo/ScrollToTop'
 
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
+import { FaHome } from 'react-icons/fa';
 import Typography from '@mui/material/Typography';
 
 const SoloProjects = () => {
@@ -87,16 +87,16 @@ const SoloProjects = () => {
               </CardContent>
               </Card>
             ))}
-            <Button 
-              className={classes.Button}
-              color="primary"
-              onClick={() => navigate('/') }
-              size="medium"
-              variant="contained"
-            > home 
-            </Button>
           </Box>
-          <ScrollToTop />
+          <Box
+            sx={{display:'flex', direction:'column'}}
+          >  
+            <ScrollToTop />
+            <div className={classes.toHomeButton}>
+              <FaHome onClick={() => navigate('/') }> 
+              </FaHome>
+            </div>
+          </Box>
         </>
 
       )
