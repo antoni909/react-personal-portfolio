@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-// import { useOctokit } from '../Hooks/useOctokit'
 import { octokit } from '../Utils/gh';
 // import { useGetOrgs } from '../Hooks/useGetOrgs'
+import gh_logo from '../Assets/ghlogo.png'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -9,11 +9,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
+import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 
-// TODO map over orgs to render Name, Members Name/Avatar, Description, url
+// TODO: map over orgs to render Name, Members Name/Avatar, Description, url
+// TODO: pass in repos_url for each organization and render the organization repo url in the GH Chip Component
+// TODO: create class for Box parent and Card child items
+
 const cpd = {
 Team_Meow:{
   orgName: "Team-Meow",
@@ -44,8 +46,6 @@ healthy_queue:{
 const OrgProjects = () => {
 
   const [ list, setList ] = useState([])
-
-  // const { data } = useOctokit(`/orgs/${'Team-Meow'}/members`)
   // const { orgData } = useGetOrgs('/user/orgs')
 
   const getOrgMembers = async (obj) => {
@@ -62,6 +62,7 @@ const OrgProjects = () => {
     const avatarList = list.map( member => {
       return (
           <Avatar
+            key={member.login}
             sizes='medium'
             alt={`profile of ${member.login}`}
             onClick={()=> window.open(member.html_url)}
@@ -72,30 +73,66 @@ const OrgProjects = () => {
     return ( avatarList )
   }
 
+  const renderGHAvatar = (list) => {
+    return (
+      <Chip
+        sx={{m:2}}
+        avatar={
+          <img
+            alt="github repo"
+            height="40"
+            src={gh_logo}
+          />
+        }
+        label="GH Repo"
+        // onClick={()=> window.open('url')}
+        variant="outlined"
+      />
+    )
+  }
+
   useEffect( () => { 
     getOrgMembers(cpd)
+    // console.log('orgData',orgData)
   },[])
-
   return (
-
-      <Box sx={{flexGrow: 1}}>
-        <Grid container spacing={2}>
+      <Box
+        sx={{ 
+          display: 'flex', 
+          alignItems: 'center',
+          alignContent: 'space-around',  
+          flexWrap: 'wrap', 
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          p: 1,
+          m: 1,
+          // bgcolor: 'black',
+          borderRadius: 5 
+        }}
+      >
           {list && list.map( org => ( 
-            <Grid 
+            <Card
               key={org.orgRepos} 
-              item 
-              xs={4}
+              sx={{ 
+                maxWidth: 340,
+                display: 'flex', 
+                alignItems: 'center',
+                alignContent: 'space-around',  
+                flexWrap: 'wrap', 
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                p: 1,
+                m: 1,
+                borderRadius: 3  
+              }}
             >
-              <Card
-                sx={{ maxWidth: 340 }}
-              >
                 <CardHeader
                   title={ org.orgName }
                 />
                 <CardMedia
                   component="img"
-                  height="150"
-                  image="https://via.placeholder.com/150"
+                  height="200"
+                  image="https://via.placeholder.com/300"
                   alt="describe the snippet"
                 />
                 <CardContent>
@@ -103,21 +140,18 @@ const OrgProjects = () => {
                     direction="row" 
                     spacing={2}
                   >
-                  <Typography 
-                    variant="body2" 
-                    color="text.secondary"
+                   Members &nbsp; { renderAvatars(org.membersList) }
+                  </Stack>
+                  <Stack 
+                    direction="row" 
+                    spacing={1}
                   >
-                    Collaborators
-                  </Typography>
-                   { renderAvatars(org.membersList) }
-                </Stack>
+                   {renderGHAvatar(['url']) }
+                  </Stack>
                 </CardContent>
-              </Card>
-            </Grid>
+            </Card>
           ))}
-        </Grid>
       </Box>
-
   );
 }
 

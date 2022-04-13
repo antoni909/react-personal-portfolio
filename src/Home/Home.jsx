@@ -1,32 +1,33 @@
 import About from './About'
 import Education from './Education'
-import Paper from '@mui/material/Paper';
 import Projects from './Projects'
 import SkillSet from './SkillSet'
+import ScrollToTop from '../ScrollTo/ScrollToTop'
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
+// TODO: remove fixed menu to clickable hamburger menu to show/hide the menu
+
 const Home = () => {
   return (
-    <Box sx={{flexGrow: 1}}>
-      <h1>Home Component</h1>
+  
+    <Box >
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <About />
         </Grid>
         <Grid item xs={12}>
-          <Projects />
-        </Grid>
-        <Grid item xs={12}>
-          <Paper elevation={3}>
             <SkillSet />
-          </Paper>
+        </Grid>
+        <Grid item xs={12} >
+          <Projects />
         </Grid>
         <Grid item xs={12}>
           <Education />
         </Grid>
       </Grid>
+      <ScrollToTop />
     </Box>
   );
 }

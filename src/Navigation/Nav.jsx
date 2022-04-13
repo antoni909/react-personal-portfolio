@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Home from '../Home/Home'
 import { Outlet, Link } from 'react-router-dom';
 
@@ -13,18 +12,23 @@ import { SocialIcon } from 'react-social-icons';
 
 const drawerWidth = 100;
 const menuList = [
+  {text: 'Projects', path: <Link style={{ textDecoration: 'none' }} to="/solo_projects">GitHub Projects</Link>},
   {text: 'Resume', path: <Link style={{ textDecoration: 'none' }} to="/resume">Resume</Link>},
   {text: 'Contact', path: <Link style={{ textDecoration: 'none' }} to="/contact">Contact</Link>}
 ]
 const mediaList = [
   {text: 'GitHub', url: 'https://github.com/antoni909' },
+  {text: 'Discord', url: 'https://discord.com/channels/@me'  },
   {text: 'LinkedIn', url: 'https://www.linkedin.com/in/lorenzo-ortega-antoni/'  },
 ]
 
+// TODO: redesign navigation to instead use a hamburger menu
+// DONE: Scroll-to feature 
+// TODO: Go-to feature
 const Nav = () => {
+
   return (
-    // TODO: Scroll-to feature 
-    // TODO: Go-to feature
+
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <Drawer
@@ -40,7 +44,7 @@ const Nav = () => {
         anchor="left"
       >
         <List>
-          {menuList.map((item,idx) => (
+          {menuList.map(( item ) => (
             <ListItem
               button
               key={item.text}
@@ -51,12 +55,17 @@ const Nav = () => {
         </List>
         < Divider />
         <List>
-          {mediaList.map((item,idx) => (
+          {mediaList.map(( item ) => (
             <ListItem
               button
               key={item.text}
             >
-              <SocialIcon style={{ height: 40, width: 40 }} url={item.url} target="_blank" rel="noreferrer noopener" />
+              <SocialIcon 
+                style={{ height: 40, width: 40 }} 
+                url={item.url} 
+                target="_blank" 
+                rel="noreferrer noopener" 
+              />
             </ListItem>
           ))}
         </List>
@@ -64,7 +73,7 @@ const Nav = () => {
       <Outlet/>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 5 }}
+        sx={{ flexGrow: 1,p: 0 }}
       >
         <Home />
       </Box>

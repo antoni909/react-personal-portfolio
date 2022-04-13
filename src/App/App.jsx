@@ -3,6 +3,7 @@ import Nav from '../Navigation/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Resume from '../Resume/Resume';
 import Contact from '../Contact/Contact';
+import SoloProjects from '../Home/SoloProjects';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" element={ <Nav/> } />
       <Route path="resume" element={ <Resume/> } />
       <Route path="contact" element={ <Contact/> } />
+      <Route path="solo_projects" element={ <SoloProjects/> } />
     </Routes>
   </BrowserRouter>
   );
