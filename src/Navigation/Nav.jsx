@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Home from '../Home/Home'
 import { Outlet, Link } from 'react-router-dom';
-import { useStyles } from '../Theme/theme';
 
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -36,11 +35,11 @@ const mediaList = [
   {text: 'LinkedIn', url: 'https://www.linkedin.com/in/lorenzo-ortega-antoni/'  },
 ]
 
-// TODO: redesign navigation to instead use a hamburger menu
+// DONE: Redesign drawer navigation to instead use a hamburger menu
 // DONE: Scroll-to feature 
 // TODO: Go-to feature
+
 const Nav = () => {
-  const classes = useStyles();
   const [anchor, setAnchor] = useState(null);
   const open = Boolean(anchor);
   const handleClick = (event) => {
@@ -70,6 +69,7 @@ const Nav = () => {
             marginLeft:5, 
             marginTop:5 
           }}
+          color="primary"
         >
           <FaHamburger />
         </IconButton>
@@ -108,13 +108,7 @@ const Nav = () => {
         </Menu>
       </Box>
       <Outlet/>
-      <Box
-        // component="main"
-        // sx={{ flexGrow: 1,p: 0 }}
-        // sx={{ display:'flex' }}
-      >
-        <Home />
-      </Box>
+      <Home />
     </Box>
   );
 }
