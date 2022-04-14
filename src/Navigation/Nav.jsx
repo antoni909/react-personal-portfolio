@@ -18,7 +18,7 @@ const menuList = [
   {
     text: 'Projects', 
     path: <Link style={{ textDecoration: 'none' }} 
-    to="/solo_projects">GitHub Projects</Link>
+    to="/solo_projects">Projects</Link>
   },
   {
     text: 'Resume', 
@@ -54,6 +54,7 @@ const Nav = () => {
       sx={{ display: 'flex' }}
     >
       <CssBaseline />
+
       <Box 
         sx={{
           position:'fixed', 
@@ -73,6 +74,7 @@ const Nav = () => {
         >
           <FaHamburger />
         </IconButton>
+
         <Menu
           id="long-menu"
           anchorEl={ anchor }
@@ -106,7 +108,9 @@ const Nav = () => {
             ))}
           </List>
         </Menu>
+
       </Box>
+      
       <Outlet/>
       <Home />
     </Box>
