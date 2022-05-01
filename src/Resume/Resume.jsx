@@ -1,39 +1,56 @@
 import { useNavigate } from 'react-router-dom'
-import Button from '@mui/material/Button';
 import { useStyles } from '../Theme/theme'
+import { FaHome } from 'react-icons/fa';
+import Box from '@mui/material/Box';
 
 import WhyMe from './WhyMe'
+import MyDocument from './MyDocument'
+import ScrollToTop from '../ScrollTo/ScrollToTop'
 
+// TODO: view and download resume feature
+// TODO: add font style
 const Resume = () => {
   const classes = useStyles();
   const navigate = useNavigate()
   return (
     <>
-      <h1>Resume</h1>
-      <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-      </p>
-      <WhyMe />
-      <Button 
-            className={classes.Button}
-            color="primary"
+      <Box 
+        className={classes.resumeBackground}
+        sx={{ 
+          display: 'flex', 
+          alignItems: 'center',
+          alignContent: 'center',
+          flexWrap: 'wrap',  
+          flexDirection: 'row',
+          justifyContent: 'center', 
+        }}
+      >
+        <WhyMe />
+      </Box>
+      <Box
+        sx={{ 
+          display: 'flex', 
+          alignItems: 'center',
+          alignContent: 'center',
+          flexWrap: 'wrap',  
+          flexDirection: 'row',
+          justifyContent: 'center', 
+        }}
+      >
+        <MyDocument />
+        <div 
+          className={classes.toHomeButton}
+          >
+          <FaHome 
+            color="magenta"
             onClick={() => navigate('/') }
-            size="medium"
-            variant="contained"
-          > home 
-      </Button>
+          > 
+          </FaHome>
+        </div>
+        <ScrollToTop />
+      </Box>
     </>
+
   );
 }
 

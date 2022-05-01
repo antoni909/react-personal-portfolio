@@ -1,17 +1,16 @@
 import { makeStyles } from '@material-ui/core'
 import landing from '../Assets/landingII.jpg'
+import resumeBck from '../Assets/resumeBackgroundTemp.jpg'
 import githubWallpaper from '../Assets/githubWallpaper.jpg'
 
 export const useStyles = makeStyles( theme => ({
   button: {
     fontSize: 25,
-    width: 11,
-    borderRadius: 10,
+    width: 15,
     boxShadow: '1px 1px 1px 1px rgba(30, 203, 243, .3)',
     '&:hover':{
       backgroundColor: '#f50057'
-    },
-    marginTop: '10px', 
+    }, 
   },
   scrollButton: {
     position: 'fixed',
@@ -34,14 +33,18 @@ export const useStyles = makeStyles( theme => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
   },
+  resumeBackground: {
+    backgroundImage: `url(${resumeBck})`,
+    minHeight: '100vh',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+  },
   ghBackground: {
-    backgroundImage: `url(${githubWallpaper})`,
+    backgroundImage: `url(${ githubWallpaper })`,
     backgroundSize: "contain",
     backgroundRepeat: 'no-repeat',
-    height: "60vh",
   },
   root: {
     flexGrow: 1,
   },
-}
-));
+}));

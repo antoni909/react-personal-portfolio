@@ -7,7 +7,8 @@ import ScrollToTop from '../ScrollTo/ScrollToTop'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-// TODO: remove fixed menu to clickable hamburger menu to show/hide the menu
+// DONE: remove fixed menu to clickable hamburger menu to show/hide the menu
+// TODO: on Icon hover --> add some effect, on Icon click --> add some effect
 
 const Home = () => {
   return (

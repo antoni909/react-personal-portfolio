@@ -51,6 +51,7 @@ const About = () => {
               boxShadow: 'none',}}
             >
             <Typography
+              color="white"
               variant='h5'
               component="div"
               gutterBottom 
@@ -63,6 +64,7 @@ const About = () => {
                 alt="neon signature"
             />
             <Typography
+              color="white"
               variant='subtitle1'
               component="div"
               gutterBottom 
@@ -72,21 +74,21 @@ const About = () => {
               My willingness to work in a team is paramount to my conceptual knowledge and growth. 
               I want to be an effective and approachable developer that is always willing to teach those around me.
             </Typography>
-            {
-              quote
-                ? quote.map(item => (
-                  <Typography
-                    key={item.text} 
-                    variant="h6" 
-                    gutterBottom 
-                    component="div"
-                  >
-                  {item.text} 
-                  {` - ${item.author}`}
-                  </Typography>
-                ))
-                : null
-            }
+              {quote
+                  ? quote.map(item => (
+                    <Typography
+                      key={item.text}
+                      color="magenta" 
+                      variant="h6" 
+                      gutterBottom 
+                      component="div"
+                    >
+                    "{item.text}"
+                    {` - ${item.author}`}
+                    </Typography>
+                  ))
+                  : null
+              }
           </Card>
         </Box>
   );
