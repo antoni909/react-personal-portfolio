@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import { useStyles } from '../Theme/theme'
+import { FaHome } from 'react-icons/fa';
 
 import WhyMe from './WhyMe'
 import MyDocument from './MyDocument'
+
 //TODO: view and download resume feature
 
 const Resume = () => {
@@ -27,15 +29,13 @@ const Resume = () => {
           sapien faucibus et molestie ac.
       </p>
       <WhyMe />
-       <MyDocument />
-      <Button 
-            className={classes.Button}
-            color="primary"
-            onClick={() => navigate('/') }
-            size="medium"
-            variant="contained"
-          > home 
-      </Button>
+      <MyDocument />
+      <div 
+        className={classes.toHomeButton}
+      >
+        <FaHome onClick={() => navigate('/') }> 
+        </FaHome>
+      </div>
     </>
   );
 }

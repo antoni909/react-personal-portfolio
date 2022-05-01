@@ -1,6 +1,6 @@
 import gh_logo from '../Assets/ghlogo.png'
 import githubWallpaper from '../Assets/githubWallpaper.jpg'
-import {useOctokit} from '../Hooks/useOctokit'
+import { useOctokit } from '../Hooks/useOctokit'
 import { useNavigate } from 'react-router-dom'
 import { useStyles } from '../Theme/theme'
 import ScrollToTop from '../ScrollTo/ScrollToTop'
