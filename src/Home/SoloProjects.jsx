@@ -98,7 +98,6 @@ const SoloProjects = () => {
             </div>
           </Box>
         </>
-
       )
     }
   }
