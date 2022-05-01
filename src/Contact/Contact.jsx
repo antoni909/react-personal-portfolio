@@ -7,7 +7,7 @@ const Contact = () => {
   const navigate = useNavigate()
   return (
     <>
-      <h1>Contact</h1>
+      <h1>Contact Info</h1>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

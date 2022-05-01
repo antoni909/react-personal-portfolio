@@ -3,6 +3,8 @@ import Button from '@mui/material/Button';
 import { useStyles } from '../Theme/theme'
 
 import WhyMe from './WhyMe'
+import MyDocument from './MyDocument'
+//TODO: view and download resume feature
 
 const Resume = () => {
   const classes = useStyles();
@@ -25,6 +27,7 @@ const Resume = () => {
           sapien faucibus et molestie ac.
       </p>
       <WhyMe />
+       <MyDocument />
       <Button 
             className={classes.Button}
             color="primary"
