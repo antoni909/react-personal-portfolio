@@ -61,7 +61,7 @@ const Nav = () => {
       <Box 
         sx={{
           position:'fixed', 
-          zIndex:1
+          zIndex:0
         }}  
       >
         <IconButton
@@ -73,7 +73,7 @@ const Nav = () => {
             marginLeft:5, 
             marginTop:5 
           }}
-          color="primary"
+          color="secondary"
         >
           <FaHamburger />
         </IconButton>
