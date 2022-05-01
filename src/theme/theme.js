@@ -6,7 +6,7 @@ import githubWallpaper from '../Assets/githubWallpaper.jpg'
 export const useStyles = makeStyles( theme => ({
   button: {
     fontSize: 25,
-    width: 11,
+    width: 15,
     boxShadow: '1px 1px 1px 1px rgba(30, 203, 243, .3)',
     '&:hover':{
       backgroundColor: '#f50057'
@@ -47,5 +47,4 @@ export const useStyles = makeStyles( theme => ({
   root: {
     flexGrow: 1,
   },
-}
-));
+}));
