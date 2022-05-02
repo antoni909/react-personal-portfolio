@@ -73,7 +73,7 @@ const OrgProjects = () => {
     return ( avatarList )
   }
 
-  const renderGHAvatar = (list) => {
+  const renderGHAvatar = (name) => {
     return (
       <Chip
         sx={{m:2}}
@@ -81,11 +81,11 @@ const OrgProjects = () => {
           <img
             alt="github repo"
             height="40"
-            src={gh_logo}
+            src={ gh_logo }
           />
         }
         label="GH Repo"
-        // onClick={()=> window.open('url')}
+        onClick={()=> window.open(`https://github.com/${name}`)}
         variant="outlined"
       />
     )
@@ -146,7 +146,7 @@ const OrgProjects = () => {
                     direction="row" 
                     spacing={1}
                   >
-                   {renderGHAvatar(['url']) }
+                   {renderGHAvatar(org.orgName) }
                   </Stack>
                 </CardContent>
             </Card>
