@@ -8,13 +8,13 @@ import SoloProjects from '../Home/SoloProjects';
 function App() {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={ <Nav/> } />
-      <Route path="resume" element={ <Resume/> } />
-      <Route path="contact" element={ <Contact/> } />
-      <Route path="solo_projects" element={ <SoloProjects/> } />
-    </Routes>
-  </BrowserRouter>
+      <Routes>
+        <Route path="/react-personal-portfolio" element={ <Nav/> } />
+        <Route path="resume" element={ <Resume/> } />
+        <Route path="contact" element={ <Contact/> } />
+        <Route path="solo_projects" element={ <SoloProjects/> } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
