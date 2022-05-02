@@ -25,7 +25,7 @@ const Contact = () => {
       <Button 
             className={classes.Button}
             color="primary"
-            onClick={() => navigate('/') }
+            onClick={() => navigate('/react-personal-portfolio') }
             size="medium"
             variant="contained"
           > home 

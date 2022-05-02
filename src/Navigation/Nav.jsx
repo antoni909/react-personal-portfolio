@@ -139,7 +139,7 @@ const Nav = () => {
 
       </Box>
 
-      {/* <Outlet/> */}
+      <Outlet/>
       <Home />
     </Box>
   );
