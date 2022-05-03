@@ -1,6 +1,6 @@
 <h1 align="center"> Welcome to my Professional Portfolio 👋 </h1>
 
-#
+# 🚧 This project is ongoing and under heavy construction! 👷 🚧
 
 ## Resources Used
 
