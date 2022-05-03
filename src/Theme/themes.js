@@ -3,7 +3,7 @@ import landing from '../Assets/landingII.jpg'
 import resumeBck from '../Assets/resumeBackgroundTemp.jpg'
 import githubWallpaper from '../Assets/githubWallpaper.jpg'
 
-export const useStyles = makeStyles( theme => ({
+ const useStyles = makeStyles( theme => ({
   button: {
     fontSize: 25,
     width: 15,
@@ -48,3 +48,4 @@ export const useStyles = makeStyles( theme => ({
     flexGrow: 1,
   },
 }));
+export default useStyles

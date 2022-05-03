@@ -2,7 +2,7 @@ import gh_logo from '../Assets/ghlogo.png'
 import githubWallpaper from '../Assets/githubWallpaper.jpg'
 import { useOctokit } from '../Hooks/useOctokit'
 import { useNavigate } from 'react-router-dom'
-import { useStyles } from '../Theme/theme'
+import useStyles from '../Theme/themes'
 import ScrollToTop from '../ScrollTo/ScrollToTop'
 
 import Box from '@mui/material/Box';

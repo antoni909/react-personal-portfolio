@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useStyles } from '../Theme/theme'
+import useStyles from '../Theme/themes'
 import signature from '../Assets/name.png'
 
 import Box from '@mui/material/Box';

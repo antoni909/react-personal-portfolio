@@ -1,4 +1,3 @@
-// import { useStyles } from '../Theme/theme'
 import cf_cert from '../Assets/cf_cert.png'
 import cf_icon from '../Assets/cf.png'
 
@@ -21,7 +20,6 @@ const relatedEd = [
 // TODO: create dropdown of skills gained after a relatedEd/program/school
 
 const Education = () => {
-  // const classes = useStyles();
   const renderRelatedEd = ( list ) => {
     return list.map(item => (
         <Card

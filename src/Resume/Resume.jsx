@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useStyles } from '../Theme/theme'
+import useStyles from '../Theme/themes.js'
 import { FaHome } from 'react-icons/fa';
 import Box from '@mui/material/Box';
 

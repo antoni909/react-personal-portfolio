@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useStyles } from '../Theme/theme'
+import useStyles from '../Theme/themes'
 
 import { FaChevronCircleUp } from 'react-icons/fa';
 
