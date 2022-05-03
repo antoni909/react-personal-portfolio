@@ -43,7 +43,7 @@ const Resume = () => {
           >
           <FaHome 
             color="magenta"
-            onClick={() => navigate('/react-personal-portfolio') }
+            onClick={() => navigate('/') }
           > 
           </FaHome>
         </div>
