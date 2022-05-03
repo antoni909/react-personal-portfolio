@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
-import { useStyles } from '../Theme/theme'
+import useStyles from '../Theme/themes'
 import pdfResume from '../Assets/LorenzoResume.pdf'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import Button from '@mui/material/Button';
-import { useStyles } from '../Theme/theme'
+import useStyles from '../Theme/themes'
 
 const Contact = () => {
   const classes = useStyles();
