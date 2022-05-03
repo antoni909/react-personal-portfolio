@@ -93,7 +93,7 @@ const SoloProjects = () => {
           >  
             <ScrollToTop />
             <div className={classes.toHomeButton}>
-              <FaHome onClick={() => navigate('/react-personal-portfolio') }> 
+              <FaHome onClick={() => navigate('/') }> 
               </FaHome>
             </div>
           </Box>
