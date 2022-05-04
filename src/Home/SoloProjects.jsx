@@ -1,5 +1,5 @@
-import gh_logo from '../Assets/ghlogo.png'
-import githubWallpaper from '../Assets/githubWallpaper.jpg'
+import gh_logo from '../Assets/images/ghlogo.png'
+import githubWallpaper from '../Assets/images/githubWallpaper.jpg'
 import { useOctokit } from '../Hooks/useOctokit'
 import { useNavigate } from 'react-router-dom'
 import useStyles from '../Theme/themes'

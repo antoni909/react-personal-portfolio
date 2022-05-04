@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { octokit } from '../Utils/gh';
 // import { useGetOrgs } from '../Hooks/useGetOrgs'
-import gh_logo from '../Assets/ghlogo.png'
+import gh_logo from '../Assets/images/ghlogo.png'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
