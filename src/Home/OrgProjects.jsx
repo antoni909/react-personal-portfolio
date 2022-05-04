@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { octokit } from '../Utils/gh';
-// import { useGetOrgs } from '../Hooks/useGetOrgs'
+import { useGetOrgs } from '../Hooks/useGetOrgs'
 import gh_logo from '../Assets/images/ghlogo.png'
 
 import Avatar from '@mui/material/Avatar';
@@ -12,10 +12,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
-// TODO: map over orgs to render Name, Members Name/Avatar, Description, url
-// TODO: pass in repos_url for each organization and render the organization repo url in the GH Chip Component
+// DONE: map over orgs to render Name, Members Name/Avatar, Description, url
+// DONE: pass in repos_url for each organization and render the organization repo url in the GH Chip Component
 // TODO: create class for Box parent and Card child items
 
+// dummy data
 const cpd = {
 Team_Meow:{
   orgName: "Team-Meow",
@@ -46,7 +47,7 @@ healthy_queue:{
 const OrgProjects = () => {
 
   const [ list, setList ] = useState([])
-  // const { orgData } = useGetOrgs('/user/orgs')
+  const { orgData } = useGetOrgs('/user/orgs')
 
   const getOrgMembers = async (obj) => {
     let res, tempList
@@ -92,8 +93,7 @@ const OrgProjects = () => {
   }
 
   useEffect( () => { 
-    getOrgMembers(cpd)
-    // console.log('orgData',orgData)
+    getOrgMembers(orgData)
   },[])
   return (
       <Box

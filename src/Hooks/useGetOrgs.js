@@ -11,7 +11,7 @@ export const useGetOrgs = ( url ) => {
   const [error, setError] = useState('')
 
   const makeOrgs = async (rawOrgData) => {
-    console.log('raw',rawOrgData)
+    // console.log('raw',rawOrgData)
     let obj = {}
     rawOrgData.forEach( org => {
       let keyName = org.login.replace(/-/g,'_')
