@@ -124,8 +124,8 @@ const OrgProjects = () => {
   }
 
   useEffect( () => {
-    getOrgMembers(cpd)
-  },[])
+    getOrgMembers(orgData)
+  },[orgData])
   return (
       <Box
         sx={{ 
@@ -146,7 +146,7 @@ const OrgProjects = () => {
               key={org.orgRepos} 
               sx={{ 
                 maxWidth: 340,
-                display: 'flex', 
+                display: 'flex',
                 alignItems: 'center',
                 alignContent: 'space-around',  
                 flexWrap: 'wrap', 
@@ -170,9 +170,9 @@ const OrgProjects = () => {
                   </Stack>
                   <Stack 
                     direction="row" 
-                    spacing={1}
+                    spacing={ 1 }
                   >
-                   {renderGHAvatar(org.orgName) }
+                   { renderGHAvatar(org.orgName) }
                   </Stack>
                 </CardContent>
             </Card>
