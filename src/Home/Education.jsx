@@ -1,5 +1,5 @@
-import cf_cert from '../Assets/cf_cert.png'
-import cf_icon from '../Assets/cf.png'
+import cf_cert from '../Assets/images/cf_cert.png'
+import cf_icon from '../Assets/images/cf.png'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';

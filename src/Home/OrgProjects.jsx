@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react'
 import { octokit } from '../Utils/gh';
-// import { useGetOrgs } from '../Hooks/useGetOrgs'
-import gh_logo from '../Assets/ghlogo.png'
+import { useGetOrgs } from '../Hooks/useGetOrgs'
+import gh_logo from '../Assets/images/ghlogo.png'
+import cf_jeopardy from '../Assets/images/cf_jeopardy.jpeg'
+import wellness_warriors from '../Assets/images/wellness_warriors.jpeg'
+import basic_cms from '../Assets/images/basic_cms.jpeg'
+import basic_messenger from '../Assets/images/basic-messenger.jpeg'
+import i_care from '../Assets/images/i_care.jpeg'
+import healthy_queue from '../Assets/images/healthy_queue.png'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -12,10 +18,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
-// TODO: map over orgs to render Name, Members Name/Avatar, Description, url
-// TODO: pass in repos_url for each organization and render the organization repo url in the GH Chip Component
+// DONE: map over orgs to render Name, Members Name/Avatar, Description, url
+// DONE: pass in repos_url for each organization and render the organization repo url in the GH Chip Component
 // TODO: create class for Box parent and Card child items
 
+// dummy data
 const cpd = {
 Team_Meow:{
   orgName: "Team-Meow",
@@ -46,7 +53,7 @@ healthy_queue:{
 const OrgProjects = () => {
 
   const [ list, setList ] = useState([])
-  // const { orgData } = useGetOrgs('/user/orgs')
+  const { orgData } = useGetOrgs('/user/orgs')
 
   const getOrgMembers = async (obj) => {
     let res, tempList
@@ -91,10 +98,34 @@ const OrgProjects = () => {
     )
   }
 
-  useEffect( () => { 
-    getOrgMembers(cpd)
-    // console.log('orgData',orgData)
-  },[])
+  const getSnippet = (orgName) => {
+
+    let snippetObject = {
+      'Team-Meow': cf_jeopardy,
+      'Wellness-Warriors': wellness_warriors,
+      'basic-cms': basic_cms,
+      'basic-messenger':basic_messenger,
+      'doc-devs':i_care,
+      'healthy-queue': healthy_queue
+    }
+
+    return(
+      <CardMedia
+        component="img"
+        height="200"
+        image={ 
+          (snippetObject[orgName].match(/([/])/))
+            ? snippetObject[orgName] 
+            : 'https://via.placeholder.com/300'
+        }
+        alt={`${orgName} snippet`}
+      />
+    )
+  }
+
+  useEffect( () => {
+    getOrgMembers(orgData)
+  },[orgData])
   return (
       <Box
         sx={{ 
@@ -110,12 +141,12 @@ const OrgProjects = () => {
           borderRadius: 5 
         }}
       >
-          {list && list.map( org => ( 
+          {list && list.map( org => (
             <Card
               key={org.orgRepos} 
               sx={{ 
                 maxWidth: 340,
-                display: 'flex', 
+                display: 'flex',
                 alignItems: 'center',
                 alignContent: 'space-around',  
                 flexWrap: 'wrap', 
@@ -129,12 +160,7 @@ const OrgProjects = () => {
                 <CardHeader
                   title={ org.orgName }
                 />
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image="https://via.placeholder.com/300"
-                  alt="describe the snippet"
-                />
+                { getSnippet(org.orgName) }
                 <CardContent>
                   <Stack 
                     direction="row" 
@@ -144,9 +170,9 @@ const OrgProjects = () => {
                   </Stack>
                   <Stack 
                     direction="row" 
-                    spacing={1}
+                    spacing={ 1 }
                   >
-                   {renderGHAvatar(org.orgName) }
+                   { renderGHAvatar(org.orgName) }
                   </Stack>
                 </CardContent>
             </Card>

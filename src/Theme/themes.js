@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core'
-import landing from '../Assets/landingII.jpg'
-import resumeBck from '../Assets/resumeBackgroundTemp.jpg'
-import githubWallpaper from '../Assets/githubWallpaper.jpg'
+import landing from '../Assets/images/landingII.jpg'
+import resumeBck from '../Assets/images/resumeBackgroundTemp.jpg'
+import githubWallpaper from '../Assets/images/githubWallpaper.jpg'
 
  const useStyles = makeStyles( theme => ({
   button: {

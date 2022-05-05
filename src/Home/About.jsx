@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import useStyles from '../Theme/themes'
-import signature from '../Assets/name.png'
+import signature from '../Assets/images/name.png'
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
