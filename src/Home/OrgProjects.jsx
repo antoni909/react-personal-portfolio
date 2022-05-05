@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react'
 import { octokit } from '../Utils/gh';
 import { useGetOrgs } from '../Hooks/useGetOrgs'
 import gh_logo from '../Assets/images/ghlogo.png'
+import cf_jeopardy from '../Assets/images/cf_jeopardy.jpeg'
+import wellness_warriors from '../Assets/images/wellness_warriors.jpeg'
+import basic_cms from '../Assets/images/basic_cms.jpeg'
+import basic_messenger from '../Assets/images/basic-messenger.jpeg'
+import i_care from '../Assets/images/i_care.jpeg'
+import healthy_queue from '../Assets/images/healthy_queue.png'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -92,8 +98,33 @@ const OrgProjects = () => {
     )
   }
 
-  useEffect( () => { 
-    getOrgMembers(orgData)
+  const getSnippet = (orgName) => {
+
+    let snippetObject = {
+      'Team-Meow': cf_jeopardy,
+      'Wellness-Warriors': wellness_warriors,
+      'basic-cms': basic_cms,
+      'basic-messenger':basic_messenger,
+      'doc-devs':i_care,
+      'healthy-queue': healthy_queue
+    }
+
+    return(
+      <CardMedia
+        component="img"
+        height="200"
+        image={ 
+          (snippetObject[orgName].match(/([/])/))
+            ? snippetObject[orgName] 
+            : 'https://via.placeholder.com/300'
+        }
+        alt={`${orgName} snippet`}
+      />
+    )
+  }
+
+  useEffect( () => {
+    getOrgMembers(cpd)
   },[])
   return (
       <Box
@@ -110,7 +141,7 @@ const OrgProjects = () => {
           borderRadius: 5 
         }}
       >
-          {list && list.map( org => ( 
+          {list && list.map( org => (
             <Card
               key={org.orgRepos} 
               sx={{ 
@@ -129,12 +160,7 @@ const OrgProjects = () => {
                 <CardHeader
                   title={ org.orgName }
                 />
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image="https://via.placeholder.com/300"
-                  alt="describe the snippet"
-                />
+                { getSnippet(org.orgName) }
                 <CardContent>
                   <Stack 
                     direction="row" 
