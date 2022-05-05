@@ -47,6 +47,7 @@ export const useGetOrgs = ( url ) => {
     else { 
       getData()  
     } 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[url])
 
   return { orgData, isPending, error }
