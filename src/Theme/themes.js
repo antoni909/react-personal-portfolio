@@ -48,12 +48,24 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1050,
     display: "flex",
     alignItems: "center",
-    flexWrap: "wrap",
     flexDirection: "column",
-    borderRadius: 3,
+    borderRadius: 5,
+  },
+  groupProjectsCardHeader:{
+    // border:'1px black solid',
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
+    borderRadius: 5,
+    margin:'10px',
+    padding:'4px'
   },
   groupProjectsImage:{
     borderRadius:'5px'
+  },
+  groupProjectsImageContainer:{
+    borderRadius: 5,
+    margin:'10px',
   },
   landingBackground: {
     backgroundImage: `url(${landing})`,

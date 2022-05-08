@@ -13,11 +13,8 @@ import healthy_queue from "../Assets/images/healthy_queue.png";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
-// import CardMedia from "@mui/material/CardMedia";
 import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
 
 // DONE: map over orgs to render Name, Members Name/Avatar, Description, url
 // DONE: pass in repos_url for each organization and render the organization repo url in the GH Chip Component
@@ -90,13 +87,12 @@ const OrgProjects = () => {
         avatar={
           <img 
             alt="github repo" 
-            height="40" 
             src={ gh_logo } 
-          />
-        }
-        label="GH Repo"
-        onClick={() => window.open(`https://github.com/${name}`)}
-        variant="outlined"
+            />
+          }
+          label="GH Repo"
+          onClick={() => window.open(`https://github.com/${name}`)}
+          variant="outlined"
       />
     );
   };
@@ -132,25 +128,27 @@ const OrgProjects = () => {
       className={ classes.groupProjectsContainer } 
       gap={ 3 }
     >
-      {list &&
-        list.map((org) => (
+      {list && list.map((org) => (
           <Card
             key={ org.orgRepos }
             className={ classes.groupProjectsCard }
+            elevation={ 5 }
           >
             <CardHeader 
               title={ org.orgName }  
             />
-            <Stack 
-              direction="row" 
-              spacing={ 2 }
-            > 
-            { renderGHAvatar(org.orgName) }
-            { renderAvatars(org.membersList) }
-            </Stack>
-            <CardContent>
-              { placeHolderImage(org.orgName) }
-            </CardContent>
+            <Box
+              className={classes.groupProjectsCardHeader}
+              gap={ 1 }
+            >
+
+                { renderGHAvatar(org.orgName) }
+                { renderAvatars(org.membersList) }
+
+            </Box>
+            <Box className={classes.groupProjectsImageContainer}
+            >{ placeHolderImage(org.orgName) }
+            </Box>
           </Card>
         ))}
     </Box>
