@@ -144,7 +144,7 @@ const OrgProjects = () => {
                 title={ org.orgName }  
               />
               <Box
-                className={classes.groupProjectsCardHeader}
+                className={ classes.groupProjectsCardHeader }
                 gap={ 1 }
               >
 

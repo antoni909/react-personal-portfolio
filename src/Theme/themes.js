@@ -93,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
   groupProjectsCardHeader:{
     // border:'1px black solid',
     display: "flex",
+    backgroundColor:'transparent',
     alignItems: "center",
     flexDirection: "row",
     borderRadius: 5,
@@ -105,6 +106,16 @@ const useStyles = makeStyles((theme) => ({
   groupProjectsImageContainer:{
     borderRadius: 5,
     margin:'10px',
+  },
+  hamburgerMenuContainer:{
+    display: 'flex', 
+    alignItems: 'center',
+    flexDirection: 'column',
+  },
+  hamburgerMenuIconOnHover:{
+    '&:hover':{
+      transform:'scale(1.15)'
+    },
   },
   landingBackground: {
     backgroundImage: `url(${landing})`,
@@ -152,16 +163,6 @@ const useStyles = makeStyles((theme) => ({
   navHamburgerMenuIcon:{
     '&:hover':{
       transform:'scale(1.25)'
-    },
-  },
-  hamburgerMenuContainer:{
-    display: 'flex', 
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
-  hamburgerMenuIconOnHover:{
-    '&:hover':{
-      transform:'scale(1.15)'
     },
   },
   previousExperienceCard:{
