@@ -2,7 +2,6 @@ import About from './About'
 import Education from './Education'
 import Landing from './Landing'
 import Projects from './Projects'
-import SkillSet from './SkillSet'
 import ScrollToTop from '../ScrollTo/ScrollToTop'
 
 import Box from '@mui/material/Box';
@@ -14,16 +13,13 @@ import Grid from '@mui/material/Grid';
 const Home = () => {
   return (
   
-    <Box >
+    <Box>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Landing />
         </Grid>
         <Grid item xs={12}>
           <About />
-        </Grid>
-        <Grid item xs={12}>
-            <SkillSet />
         </Grid>
         <Grid item xs={12} >
           <Projects />

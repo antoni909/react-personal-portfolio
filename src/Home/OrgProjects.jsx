@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { octokit } from "../Utils/gh";
 import useStyles from "../Theme/themes";
 import { useGetOrgs } from "../Hooks/useGetOrgs";
+// eslint-disable-next-line no-unused-vars
 import gh_logo from "../Assets/images/ghlogo.png";
+// import gh_logo_transp from "../Assets/logos/ghLogo_Transp.png";
+// import gh_logoTransp from "../Assets/logos/ghLogoTrans.png";
 import cf_jeopardy from "../Assets/images/cf_jeopardy.jpeg";
 import wellness_warriors from "../Assets/images/wellness_warriors.jpeg";
 import basic_cms from "../Assets/images/basic_cms.jpeg";
@@ -70,11 +73,12 @@ const OrgProjects = () => {
     const avatarList = list.map((member) => {
       return (
         <Avatar
-          key={member.login}
+          key={ member.login }
+          className={ classes.groupProjectsMembersAvatars }
           sizes="medium"
-          alt={`profile of ${member.login}`}
-          onClick={() => window.open(member.html_url)}
-          src={member.avatar_url}
+          alt={`profile of ${ member.login }`}
+          onClick={ () => window.open(member.html_url) }
+          src={ member.avatar_url }
         />
       );
     });
@@ -90,9 +94,10 @@ const OrgProjects = () => {
             src={ gh_logo } 
             />
           }
-          label="GH Repo"
-          onClick={() => window.open(`https://github.com/${name}`)}
-          variant="outlined"
+        className={ classes.groupProjectsGHChip }
+        label="GH Repo"
+        onClick={ () => window.open(`https://github.com/${ name }`) }
+        variant="outlined"
       />
     );
   };
@@ -124,34 +129,37 @@ const OrgProjects = () => {
     getOrgMembers(orgData);
   }, [orgData]);
   return (
-    <Box 
-      className={ classes.groupProjectsContainer } 
-      gap={ 3 }
-    >
-      {list && list.map((org) => (
-          <Card
-            key={ org.orgRepos }
-            className={ classes.groupProjectsCard }
-            elevation={ 5 }
-          >
-            <CardHeader 
-              title={ org.orgName }  
-            />
-            <Box
-              className={classes.groupProjectsCardHeader}
-              gap={ 1 }
+    <>
+      <Box 
+        className={ classes.groupProjectsContainer } 
+        gap={ 3 }
+      >
+        {list && list.map((org) => (
+            <Card
+              key={ org.orgRepos }
+              className={ classes.groupProjectsCard }
+              elevation={ 5 }
             >
+              <CardHeader 
+                title={ org.orgName }  
+              />
+              <Box
+                className={classes.groupProjectsCardHeader}
+                gap={ 1 }
+              >
 
-                { renderGHAvatar(org.orgName) }
-                { renderAvatars(org.membersList) }
+                  { renderGHAvatar(org.orgName) }
+                  { renderAvatars(org.membersList) }
 
-            </Box>
-            <Box className={classes.groupProjectsImageContainer}
-            >{ placeHolderImage(org.orgName) }
-            </Box>
-          </Card>
-        ))}
-    </Box>
+              </Box>
+              <Box className={classes.groupProjectsImageContainer}
+              >{ placeHolderImage(org.orgName) }
+              </Box>
+            </Card>
+          ))}
+      </Box>
+      <p>GH Solo Projects...</p>
+    </>
   );
 };
 

@@ -7,7 +7,8 @@ const Contact = () => {
   const navigate = useNavigate()
   return (
     <>
-      <h1>Contact Info</h1>
+      <h1>Get In Touch</h1>
+      {/* name,lastname, email, subject, message */}
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

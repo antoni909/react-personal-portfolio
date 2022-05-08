@@ -18,12 +18,10 @@ import {
 } from 'akar-icons';
 import Marquee from "react-fast-marquee";
 
-
 const SkillSet = () => {
 
   return (
     <>
-      <h1>Skills and Tools</h1>
       <Paper elevation={3}>
         <Marquee
           loop={0}
@@ -35,17 +33,17 @@ const SkillSet = () => {
           play={true}
           speed={20}
         >
-              <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          '& > :not(style)': {
-            m: 1,
-            width: 80,
-            height: 80,
-          },
-        }}
-      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            '& > :not(style)': {
+              m: 1,
+              width: 80,
+              height: 80,
+            },
+          }}
+        >
         <JavascriptFill color="yellow" size={35}/>
         <ReactFill color="#89CFF0" size={35} />
         <HtmlFill color="red" size={35} />
@@ -60,11 +58,10 @@ const SkillSet = () => {
         <SlackFill color="#87ceeb" size={35} />
         <BootstrapFill color="#ADD8E6" size={35} />
         <PostgresqlFill color="#89CFF0" size={35} />
-      </Box>
-
-
+        </Box>
         </Marquee>
       </Paper>
+      
     </>
   );
 }

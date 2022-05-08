@@ -1,3 +1,4 @@
+import useStyles from "../Theme/themes";
 import cf_cert from '../Assets/images/cf_cert.png'
 import cf_icon from '../Assets/images/cf.png'
 import hr_logo from '../Assets/images/hr_logo.jpeg'
@@ -6,6 +7,7 @@ import wou_logo from '../Assets/images/wou_logo.png'
 import wou_soccer from '../Assets/images/wou_soccer.jpg'
 import usmc_logo from '../Assets/images/usmc_logo.jpg'
 import uniform_pic from '../Assets/images/uniform_pic.jpg'
+// import SkillSet from './SkillSet'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -54,22 +56,15 @@ const previousEd = [
 // TODO: create dropdown of skills gained after a relatedEd/program/school
 
 const Education = () => {
+  
+  const classes = useStyles();
+
   const renderRelatedEd = ( list ) => {
     return list.map(item => (
-        <Card
+      <Card
         key={item.name}
-        sx={{ 
-          maxWidth: 340,
-          display: 'flex', 
-          alignItems: 'center',
-          alignContent: 'space-around',  
-          flexWrap: 'wrap', 
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          p: 1,
-          m: 1,
-          borderRadius: 3  
-        }}
+        className={classes.relatedEducationCard}
+        elevation={ 5 }
       >
           <CardHeader
             title={ item.name }
@@ -98,18 +93,8 @@ const Education = () => {
     return list.map(item => (
         <Card
           key={ item.name }
+          className={classes.previousExperienceCard}
           elevation={ 5 }
-          sx={{ 
-            maxWidth: 560,
-            display: 'flex', 
-            alignItems: 'center', 
-            flexWrap: 'wrap', 
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            p: 1,
-            m: 1,
-            borderRadius: 3  
-          }}
         >
           <CardHeader
             title={ item.name }
@@ -137,42 +122,14 @@ const Education = () => {
 
   return (
     <>
-      <h1>Programming Certifications</h1>
-      <Box
-        sx={{ 
-          display: 'flex', 
-          alignItems: 'center',
-          alignContent: 'space-around',  
-          flexWrap: 'wrap', 
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          p: 1,
-          m: 1,
-          // bgcolor: 'black',
-          borderRadius: 5 
-        }}
-      >
+      <Box className={classes.educationContainer}>
+        {/* <SkillSet/> */}
         { renderRelatedEd( relatedEd ) }
       </Box>
-      <h1>Previous Education and Experience</h1>
-      <Box
-        sx={{ 
-          display: 'flex', 
-          alignItems: 'center',
-          alignContent: 'space-around',  
-          flexWrap: 'wrap', 
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          p: 1,
-          m: 1,
-          // bgcolor: 'black',
-          borderRadius: 5 
-        }}
-      >
+      <Box className={classes.educationPreviousContainer}>
         { renderPreviousExp( previousEd ) }
       </Box>
     </>
-
   );
 }
 

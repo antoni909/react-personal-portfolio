@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Home from '../Home/Home'
 import { Outlet, Link } from 'react-router-dom';
+import useStyles from "../Theme/themes";
 
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -47,6 +48,7 @@ const mediaList = [
 // DONE: Remove Social Icons from Hamburger Menu, fix icons above the hamburger icon
 
 const Nav = () => {
+  const classes = useStyles();
   const [anchor, setAnchor] = useState(null);
   const open = Boolean(anchor);
   const handleClick = (event) => {
@@ -61,28 +63,15 @@ const Nav = () => {
       <CssBaseline />
 
       <Box 
-        sx={{
-          position:'fixed', 
-          zIndex:0
-        }}  
+        className={ classes.navMenuContainer }
       >
-        <Box
-          sx={{ 
-            display: 'flex', 
-            alignContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column', 
-            flexWrap: 'wrap', 
-            justifyContent: 'center',
-            marginTop:5 
-          }}
-        >
+        <Box className={ classes.navIconMenu } >
           <List>
               {mediaList.map(( item ) => (
                 <ListItem
                   button
+                  className={ classes.navIconOnHover }
                   key={ item.text }
-                  sx={{ marginLeft:5 }}
                 >
                   <SocialIcon 
                     rel="noreferrer noopener" 
@@ -94,14 +83,9 @@ const Nav = () => {
               ))}
           </List>
           <IconButton
-            aria-label="more"
-            id="long-button"
+            className={ classes.navHamburgerMenuIcon }
             onClick={ handleClick }
-            sx={{
-              fontSize: 60, 
-              marginLeft:5, 
-            }}
-            color="secondary"
+            sx={{ fontSize: 60, color:'#30D5C8' }}
           >
             <FaHamburger />
           </IconButton>
@@ -109,21 +93,15 @@ const Nav = () => {
 
         <Menu
           anchorEl={ anchor }
-          id="long-menu"
           open={ open }
           onClose={ handleClose }
         >
-          <Box
-            sx={{ 
-              display: 'flex', 
-              alignItems: 'center',
-              flexDirection: 'column',
-            }}
-          >
+          <Box className={classes.hamburgerMenuContainer} >
             <List>
               {menuList.map(( item ) => (
                 <ListItem
                   button
+                  className={classes.hamburgerMenuIconOnHover}
                   key={item.text}
                 >
                   <ListItemIcon>
