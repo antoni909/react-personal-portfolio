@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import useStyles from '../Theme/themes'
-import signature from '../Assets/images/name.png'
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 // TODO: adjust profile pic and text size/alignment
@@ -32,39 +30,15 @@ const About = () => {
   },[])
 
   return (
-        <Box 
-          className={classes.landingBackground}
-          sx={{ 
-            display: 'flex', 
-            alignItems: 'center',
-            alignContent: 'center',
-            flexWrap: 'wrap',  
-            flexDirection: 'row',
-            justifyContent: 'center', 
-          }}
-        >
-          <Card 
-            sx={{
-              maxWidth: 500,
-              marginRight: '20%', 
-              backgroundColor: 'transparent',
-              boxShadow: 'none',}}
-            >
+        <Box className={classes.aboutContainer}>
+          <Card className={classes.aboutCard}>
             <Typography
-              color="white"
               variant='h5'
               component="div"
               gutterBottom 
             > Web Developer
             </Typography>
-            <CardMedia
-                component="img"
-                height="105"
-                image={ signature }
-                alt="neon signature"
-            />
             <Typography
-              color="white"
               variant='subtitle1'
               component="div"
               gutterBottom 
