@@ -113,7 +113,7 @@ const OrgProjects = () => {
     };
     return (
         <img
-          class={classes.groupProjectsImage}
+          className={ classes.groupProjectsImage }
           width={ 540 }  
           height={ 340 } 
           src={ snippetObject[orgName].match(/([/])/)
