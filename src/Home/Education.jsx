@@ -1,6 +1,8 @@
 import useStyles from "../Theme/themes";
 import cf_cert from '../Assets/images/cf_cert.png'
 import cf_icon from '../Assets/images/cf.png'
+import gt_logo  from "../Assets/logos/gt_logo.jpg";
+import courseraUX_cert  from "../Assets/certs/courseraUX_cert.jpg";
 import hr_logo from '../Assets/images/hr_logo.jpeg'
 import hr_basic_js from '../Assets/images/hr_basic_js.png'
 import wou_logo from '../Assets/images/wou_logo.png'
@@ -31,6 +33,14 @@ const relatedEd = [
     name: 'HackerRank',
     url: 'https://www.hackerrank.com/skills-verification',
     skill:'JavaScript(Basic)',
+  },
+  {
+    icon: gt_logo, 
+    certification: courseraUX_cert, 
+    graduation:'May 2022',
+    name: 'Georgia Institute of Technology',
+    url: 'https://coursera.org/share/86c73e8888cb89d07e40c59aef472d06',
+    skill:'UX Design',
   },
 ]
 const previousEd = [
