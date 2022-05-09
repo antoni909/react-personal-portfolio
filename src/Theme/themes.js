@@ -209,6 +209,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor:'#f4f4f4',
       transform:'scale(1.05)'
     },
+    padding:'5px 5px'
   },
   resumeBackground: {
     backgroundImage: `url(${resumeBck})`,
