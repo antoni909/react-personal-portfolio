@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
 import { octokit } from "../Utils/gh";
 import useStyles from "../Theme/themes";
 import { useGetOrgs } from "../Hooks/useGetOrgs";
-// eslint-disable-next-line no-unused-vars
 import gh_logo from "../Assets/images/ghlogo.png";
-// import gh_logo_transp from "../Assets/logos/ghLogo_Transp.png";
-// import gh_logoTransp from "../Assets/logos/ghLogoTrans.png";
 import cf_jeopardy from "../Assets/images/cf_jeopardy.jpeg";
 import wellness_warriors from "../Assets/images/wellness_warriors.jpeg";
 import basic_cms from "../Assets/images/basic_cms.jpeg";
@@ -15,6 +13,7 @@ import healthy_queue from "../Assets/images/healthy_queue.png";
 
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button"
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import Chip from "@mui/material/Chip";
@@ -53,6 +52,7 @@ const cpd = {
 };
 
 const OrgProjects = () => {
+  const navigate = useNavigate()
   const classes = useStyles();
   const [list, setList] = useState([]);
   const { orgData } = useGetOrgs("/user/orgs");
@@ -129,7 +129,9 @@ const OrgProjects = () => {
     getOrgMembers(orgData);
   }, [orgData]);
   return (
-    <>
+    <Box
+      className={classes.orgProjectsContainer}
+    >
       <Box 
         className={ classes.groupProjectsContainer } 
         gap={ 3 }
@@ -158,8 +160,15 @@ const OrgProjects = () => {
             </Card>
           ))}
       </Box>
-      <p>GH Solo Projects...</p>
-    </>
+      <Box
+        className={classes.clickToSoloProjectsContainer}
+      >
+        <Button
+          className={classes.clickToSoloProjects}
+          onClick={ () => navigate('/solo_projects')}
+        >See All GH Projects </Button>
+      </Box>
+    </Box>
   );
 };
 

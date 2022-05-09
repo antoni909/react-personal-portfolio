@@ -28,6 +28,23 @@ const useStyles = makeStyles((theme) => ({
       transform:'scale(1.05)'
     },
   },
+  clickToSoloProjectsContainer:{
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent:'flex-end',
+    margin:'50px 130px',
+  },
+  clickToSoloProjects:{
+    color:'#30D5C8',
+    backgroundColor:'transparent',
+    border:'3px black solid',
+    fontSize:'40px',
+    "&:hover": {
+      color:'black',
+      backgroundColor: "transparent",
+      transform:'scale(1.05)'
+    },
+  },
   educationContainer:{
     minHeight:'100vh',
     display: 'flex', 
@@ -67,7 +84,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   groupProjectsContainer:{
-    minHeight: "100vh",
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'space-around',  
@@ -125,6 +141,7 @@ const useStyles = makeStyles((theme) => ({
   },
   landingContainer: {
     minHeight: "100vh",
+    backgroundColor:'transparent',
     display: "flex",
     alignItems: "center",
     alignContent: "center",
@@ -132,15 +149,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   landingCard: {
-    // border: "3px red solid",
+    border: "3px red solid",
     maxWidth: 700,
     backgroundColor: "transparent",
-    boxShadow: "none",
   },
   landingCardTitles: {
+    backgroundColor: "transparent",
     fontSize:'80px',
-    fontWeight: 'bolder',
-    color:'white',
   },
   navMenuContainer:{
     margin: '50px 25px', 
@@ -164,6 +179,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover':{
       transform:'scale(1.25)'
     },
+  },
+  orgProjectsContainer:{
+    minHeight: '100vh',
   },
   previousExperienceCard:{
     maxWidth: 560,
