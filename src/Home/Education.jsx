@@ -10,7 +10,6 @@ import wou_logo from '../Assets/images/wou_logo.png'
 import wou_soccer from '../Assets/images/wou_soccer.jpg'
 import usmc_logo from '../Assets/images/usmc_logo.jpg'
 import uniform_pic from '../Assets/images/uniform_pic.jpg'
-// import SkillSet from './SkillSet'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -63,8 +62,8 @@ const previousEd = [
   },
 ]
 
-// TODO: create class for Box parent and Card child items
-// TODO: create dropdown of skills gained after a relatedEd/program/school
+// DONE: create class for Box parent and Card child items
+// DONE: create show skills on hover of certificate
 
 const Education = () => {
   
@@ -74,19 +73,18 @@ const Education = () => {
   const renderSkills = (targetSkill) => {
     const hackerRank = 'covers topics like, Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.'
     const georgiaTech = 'Usability User Experience (UX), User Experience Design (UXD), User Interface'
-    const codeFellows = 'Git, GitHub, Node.js, ESLint, Heroku, React, Redux Toolkit, Jest, Redux, React-Native, Socket.IO, Express JSAdvanced Server-Side and Client-Side JavaScript React and component frameworks Advanced HTML, CSS, Data Structures and Algorithms,Cloud integration and deployments with AWS tools like S3, Lambda '
+    const codeFellows = 'Git, GitHub, Node.js, ESLint, Heroku, React, Redux Toolkit, Jest,Redux, React-Native, Socket.IO, Express JSAdvanced Server-Side and Client-Side JavaScript React and component frameworks Advanced HTML, CSS, Data Structures and Algorithms,Cloud integration and deployments with AWS tools like S3, Lambda '
     const skillsObj = {
       'HackerRank': hackerRank,
       'CodeFellows': codeFellows,
       'Georgia Institute of Technology': georgiaTech
     }
     setRenderSkill(
-      <p className={classes.educationParagraph}>
+      <p className={classes.educationSkillParagraph}>
         {skillsObj[targetSkill]}
       </p>
     )
   }
-
   const renderRelatedEd = ( list ) => {
 
     return list.map(item => (
@@ -161,10 +159,8 @@ const Education = () => {
             <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
             <p className={classes.educationParagraph}>hover to see the skills I gained</p>
             {renderSkill}
-            {/* create dynamic text that shows skills gained by some certification/program */}
           </div>
           <Box className={classes.educationCertsContainer}>
-            {/* <SkillSet/> */}
             { renderRelatedEd( relatedEd ) }
           </Box>
 

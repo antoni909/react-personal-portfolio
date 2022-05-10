@@ -55,8 +55,10 @@ const useStyles = makeStyles((theme) => ({
     maxWidth:'50%',
     margin: 'auto',
     marginLeft:'5%',
+    minHeight:'0px',
     width: '50%',
     padding: '10px',
+    overflow:'scroll'
   },
   educationTitle:{
     fontWeight:'bold',
@@ -70,7 +72,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize:'20px',
     textAlign:'justify',
     maxWidth:'90%',
-    paddingLeft:'7%'
+    paddingLeft:'7%',
+  },
+  educationSkillParagraph:{
+    fontSize:'20px',
+    textAlign:'justify',
+    maxWidth:'90%',
+    paddingLeft:'7%',
+    flex:'1'
   },
   educationCertsContainer:{
     display: 'flex', 
@@ -229,6 +238,7 @@ const useStyles = makeStyles((theme) => ({
   },
   relatedEducationCard:{
     maxWidth: 340,
+    border:'3px black solid',
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'space-around',  
