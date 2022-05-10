@@ -49,16 +49,16 @@ const useStyles = makeStyles((theme) => ({
     minHeight:'100vh',
     display:'flex',
     flexDirection:'row',
-    alignItems:'center'
+    alignItems:'center',
   },
   educationTitleContainer:{
     maxWidth:'50%',
     margin: 'auto',
     marginLeft:'5%',
     minHeight:'0px',
+    height:'600px',
     width: '50%',
     padding: '10px',
-    overflow:'scroll'
   },
   educationTitle:{
     fontWeight:'bold',
@@ -78,8 +78,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize:'20px',
     textAlign:'justify',
     maxWidth:'90%',
+    maxHeigh:'1px',
     paddingLeft:'7%',
-    flex:'1'
   },
   educationCertsContainer:{
     display: 'flex', 
@@ -238,7 +238,6 @@ const useStyles = makeStyles((theme) => ({
   },
   relatedEducationCard:{
     maxWidth: 340,
-    border:'3px black solid',
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'space-around',  
@@ -248,9 +247,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 3,
     '&:hover':{
       backgroundColor:'#f4f4f4',
-      transform:'scale(1.05)'
+      transform:'scale(1.01)'
     },
-    padding:'5px 5px'
+    padding:'5px 5px',
   },
   resumeBackground: {
     backgroundImage: `url(${resumeBck})`,

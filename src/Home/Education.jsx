@@ -93,7 +93,7 @@ const Education = () => {
         className={classes.relatedEducationCard}
         elevation={ 5 }
         onMouseEnter={()=> renderSkills(item.name)}
-        onMouseLeave={()=> setRenderSkill(false)}
+        // onMouseLeave={()=> setRenderSkill(false)}
       >
           <CardHeader
             title={ item.name }
@@ -157,7 +157,7 @@ const Education = () => {
               I have aquired skills in Full Stack Web Development
             </h2>
             <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
-            <p className={classes.educationParagraph}>hover to see the skills I gained</p>
+            <p className={classes.educationParagraph}>hover to see the skills I have attained</p>
             {renderSkill}
           </div>
           <Box className={classes.educationCertsContainer}>
@@ -166,7 +166,15 @@ const Education = () => {
 
       </Box>
       <Box className={classes.educationPreviousContainer}>
+        <Box className={classes.educationContainer}>
+          <div className={classes.educationTitleContainer}>
+            <h2 className={classes.educationTitle}>
+              Look into Previous Education and Experience
+            </h2>
+            <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
+          </div>
         { renderPreviousExp( previousEd ) }
+      </Box>
       </Box>
     </>
   );
