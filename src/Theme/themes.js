@@ -141,21 +141,25 @@ const useStyles = makeStyles((theme) => ({
   },
   landingContainer: {
     minHeight: "100vh",
-    backgroundColor:'transparent',
     display: "flex",
+    gap:'3px',
     alignItems: "center",
     alignContent: "center",
     flexDirection: "column",
-    justifyContent: "center",
   },
-  landingCard: {
-    border: "3px red solid",
-    maxWidth: 700,
-    backgroundColor: "transparent",
+  landingTitle: {
+    fontSize:'145px',
+    fontWeight:'900',
+    color: 'whitesmoke',
+    marginBottom:'0px',
+    padding:'0px'
   },
-  landingCardTitles: {
-    backgroundColor: "transparent",
-    fontSize:'80px',
+  landingSubTitle: {
+    fontSize:'60px',
+    fontWeight:'800',
+    color: '#30D5C8',
+    margin:'0px',
+    padding:'0px'
   },
   navMenuContainer:{
     margin: '50px 25px', 

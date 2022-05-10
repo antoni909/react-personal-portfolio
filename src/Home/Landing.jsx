@@ -2,9 +2,9 @@
 import useStyles from '../Theme/themes'
 
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
+// import Card from '@mui/material/Card';
 // import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 
 const Landing = () => {
   const classes = useStyles();
@@ -12,16 +12,8 @@ const Landing = () => {
   return (
     <Box className={classes.landingBackground} >
       <Box className={classes.landingContainer} >
-        <Card className={classes.landingCard} >
-          <h3 className={classes.landingCardTitles}>Lorenzo A. Ortega
-          </h3>
-          <Typography
-            className={classes.landingCardTitles}
-            variant='h3'
-            component="div" 
-          > Web Developer
-          </Typography>
-        </Card>
+        <h2 className={classes.landingTitle}>Lorenzo Ortega</h2>
+        <h5 className={classes.landingSubTitle}>Web Developer .</h5>
       </Box>
     </Box>
   );
