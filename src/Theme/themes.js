@@ -47,12 +47,39 @@ const useStyles = makeStyles((theme) => ({
   },
   educationContainer:{
     minHeight:'100vh',
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center'
+  },
+  educationTitleContainer:{
+    maxWidth:'50%',
+    margin: 'auto',
+    marginLeft:'5%',
+    width: '50%',
+    padding: '10px',
+  },
+  educationTitle:{
+    fontWeight:'bold',
+    fontSize:'40px',
+    textAlign:'left',
+    lineHeight:'1.6em',
+    maxWidth:'90%',
+    paddingLeft:'7%',
+  },
+  educationParagraph:{
+    fontSize:'20px',
+    textAlign:'justify',
+    maxWidth:'90%',
+    paddingLeft:'7%'
+  },
+  educationCertsContainer:{
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'space-around',  
     flexWrap: 'wrap', 
     flexDirection: 'row',
     justifyContent: 'space-around',
+    gap:'10px'
   },
   educationPreviousContainer:{
     minHeight:'100vh',

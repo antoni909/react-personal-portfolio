@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import useStyles from "../Theme/themes";
 import cf_cert from '../Assets/images/cf_cert.png'
 import cf_icon from '../Assets/images/cf.png'
@@ -68,13 +69,33 @@ const previousEd = [
 const Education = () => {
   
   const classes = useStyles();
+  const [renderSkill, setRenderSkill] = useState(false)
+  
+  const renderSkills = (targetSkill) => {
+    const hackerRank = 'covers topics like, Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.'
+    const georgiaTech = 'Usability User Experience (UX), User Experience Design (UXD), User Interface'
+    const codeFellows = 'Git, GitHub, Node.js, ESLint, Heroku, React, Redux Toolkit, Jest, Redux, React-Native, Socket.IO, Express JSAdvanced Server-Side and Client-Side JavaScript React and component frameworks Advanced HTML, CSS, Data Structures and Algorithms,Cloud integration and deployments with AWS tools like S3, Lambda '
+    const skillsObj = {
+      'HackerRank': hackerRank,
+      'CodeFellows': codeFellows,
+      'Georgia Institute of Technology': georgiaTech
+    }
+    setRenderSkill(
+      <p className={classes.educationParagraph}>
+        {skillsObj[targetSkill]}
+      </p>
+    )
+  }
 
   const renderRelatedEd = ( list ) => {
+
     return list.map(item => (
       <Card
         key={item.name}
         className={classes.relatedEducationCard}
         elevation={ 5 }
+        onMouseEnter={()=> renderSkills(item.name)}
+        onMouseLeave={()=> setRenderSkill(false)}
       >
           <CardHeader
             title={ item.name }
@@ -89,14 +110,14 @@ const Education = () => {
                 />
               </Avatar>
             }
-          />
+            />
           <CardMedia
             component="img"
             height="250"
             image={item.certification}
             alt="certification"
           />
-        </Card>
+      </Card>
     ))
   }
   const renderPreviousExp = ( list ) => {
@@ -133,8 +154,20 @@ const Education = () => {
   return (
     <>
       <Box className={classes.educationContainer}>
-        {/* <SkillSet/> */}
-        { renderRelatedEd( relatedEd ) }
+          <div className={classes.educationTitleContainer}>
+            <h2 className={classes.educationTitle}>
+              I have aquired skills in Full Stack Web Development
+            </h2>
+            <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
+            <p className={classes.educationParagraph}>hover to see the skills I gained</p>
+            {renderSkill}
+            {/* create dynamic text that shows skills gained by some certification/program */}
+          </div>
+          <Box className={classes.educationCertsContainer}>
+            {/* <SkillSet/> */}
+            { renderRelatedEd( relatedEd ) }
+          </Box>
+
       </Box>
       <Box className={classes.educationPreviousContainer}>
         { renderPreviousExp( previousEd ) }
