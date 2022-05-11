@@ -2,6 +2,8 @@ import { makeStyles } from "@material-ui/core";
 import resumeBck from "../Assets/images/resumeBackgroundTemp.jpg";
 import aboutBackgroundImage from "../Assets/images/aboutBackgroundImage.jpg"
 import githubWallpaper from "../Assets/images/githubWallpaper.jpg";
+import prevExpBackground from "../Assets/images/prevExperienceBackground.jpg";
+
 const useStyles = makeStyles((theme) => ({
   aboutBackground:{
     backgroundImage:`url(${ aboutBackgroundImage })`,
@@ -96,18 +98,66 @@ const useStyles = makeStyles((theme) => ({
     padding: '10px',
   },
   educationTitle:{
-    fontWeight:'bold',
-    fontSize:'40px',
+    color:'#30D5C8',
+    fontWeight:'900',
+    fontSize:'60px',
     textAlign:'left',
     lineHeight:'1.6em',
-    maxWidth:'90%',
-    paddingLeft:'7%',
   },
   educationParagraph:{
+    color:'black',
     fontSize:'20px',
     textAlign:'justify',
     maxWidth:'90%',
-    paddingLeft:'7%',
+  },
+  educationPrevExpCarousel:{
+    borderRadius:'7px',
+    maxHeight:'700px',
+  },
+  educationPrevCarouselContainer:{
+    width:'700px',
+    height:'400px',
+    overflow:'scroll',
+    marginRight:'5%',
+  },
+  educationPrevTitle:{
+    color:'#30D5C8',
+    fontWeight:'900',
+    fontSize:'60px',
+    textAlign:'left',
+    lineHeight:'1.3',
+  },
+  educationPrevParagraph:{
+    color:'black',
+    fontSize:'20px',
+    textAlign:'justify',
+  },
+  educationPreviousExpCard:{
+    backgroundColor:'white',
+    maxWidth: 660,
+    display: 'flex', 
+    alignItems: 'center', 
+    flexWrap: 'wrap', 
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderRadius: 3,
+  },
+  educationPreviousExpContainer:{
+    minHeight:'100vh',
+    background:`url(${prevExpBackground})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    display: 'flex', 
+    alignItems: 'center',
+    alignContent: 'space-around',  
+    flexDirection: 'row',
+  },
+  educationPreviousTitleContainer:{
+    maxWidth:'50%',
+    // margin: '10%',
+    margin:' 0% 10%',
+    width: '50%',
+    padding: '10px',
   },
   educationSkillParagraph:{
     fontSize:'20px',
@@ -115,26 +165,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth:'90%',
     maxHeigh:'1px',
     paddingLeft:'7%',
-  },
-  educationPreviousContainer:{
-    minHeight:'100vh',
-    background:'rgb(3 3 5)',
-    display: 'flex', 
-    alignItems: 'center',
-    alignContent: 'space-around',  
-    flexWrap: 'wrap', 
-    flexDirection: 'row',
-    justifyContent: 'space-around', 
-  },
-  educationPreviousTitleContainer:{
-    color:'whitesmoke',
-    maxWidth:'50%',
-    margin: 'auto',
-    marginLeft:'5%',
-    minHeight:'0px',
-    height:'600px',
-    width: '50%',
-    padding: '10px',
   },
   footerBackgroundImage:{
     background:'black',
@@ -270,18 +300,8 @@ const useStyles = makeStyles((theme) => ({
   orgProjectsContainer:{
     minHeight: '100vh',
   },
-  previousExperienceCard:{
-    maxWidth: 560,
-    display: 'flex', 
-    alignItems: 'center', 
-    flexWrap: 'wrap', 
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    borderRadius: 3,
-    '&:hover':{
-      backgroundColor:'#f4f4f4',
-      transform:'scale(1.05)'
-    },
+  previousExperienceCarousel:{
+    border:'5px red solid',
   },
   relatedEducationCard:{
     maxWidth: 340,
