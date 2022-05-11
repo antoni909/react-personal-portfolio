@@ -10,7 +10,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemText';
 import ListItemText from '@mui/material/ListItemText';
-import { SocialIcon } from 'react-social-icons';
 
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
@@ -35,11 +34,6 @@ const menuList = [
     path: <Link style={{ textDecoration: 'none' }} to="/contact">Contact</Link>,
     menuIcon: <FcContacts style={{ height: 40, width: 40 }}/>
   }
-]
-const mediaList = [
-  {text: 'Discord', url: 'https://discord.com/channels/@me'  },
-  {text: 'GitHub', url: 'https://github.com/antoni909' },
-  {text: 'LinkedIn', url: 'https://www.linkedin.com/in/lorenzo-ortega-antoni/'  },
 ]
 
 // DONE: Redesign drawer navigation to instead use a hamburger menu
@@ -67,26 +61,10 @@ const Nav = () => {
         className={ classes.navMenuContainer }
       >
         <Box className={ classes.navIconMenu } >
-          <List>
-              {mediaList.map(( item ) => (
-                <ListItem
-                  button
-                  className={ classes.socialIconOnHover }
-                  key={ item.text }
-                >
-                  <SocialIcon 
-                    rel="noreferrer noopener" 
-                    style={{ height: 60, width: 60 }} 
-                    target="_blank" 
-                    url={ item.url } 
-                  />
-                </ListItem>
-              ))}
-          </List>
           <IconButton
             className={ classes.navHamburgerMenuIcon }
             onClick={ handleClick }
-            sx={{ fontSize: 60, color:'#30D5C8' }}
+            sx={{ fontSize: 80, color:'#30D5C8' }}
           >
             <FaHamburger />
           </IconButton>
