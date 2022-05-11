@@ -167,7 +167,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footerContainer:{
     minHeight:'66.6vh',
-    background:'linear-gradient(to right, #000428, #004e92)',
+    background:'linear-gradient(to left, #000928, #004e92)',
     display: 'flex', 
     alignContent: 'center',
     alignItems: 'center',
@@ -175,12 +175,13 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap', 
     justifyContent: 'center',
   },
-  socialIconsList:{
-    display: 'flex', 
-    alignContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row', 
-    justifyContent: 'center',
+  footerParagraphContainer:{
+    textAlign:'center'
+  },
+  footerParagraph:{
+    color:'#30D5C8',
+    fontSize:'40px',
+    fontWeight:'300'
   },
   footerVerticalLine:{
     borderLeft: '3px solid white',
@@ -301,11 +302,6 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap', 
     justifyContent: 'center',
   },
-  socialIconOnHover:{
-    '&:hover':{
-      transform:'scale(1.25)'
-    },
-  },
   navHamburgerMenuIcon:{
     '&:hover':{
       transform:'scale(1.25)'
@@ -351,6 +347,18 @@ const useStyles = makeStyles((theme) => ({
     '&:hover':{
       transform:'scale(1.3)'
     },
+  },
+  socialIconOnHover:{
+    '&:hover':{
+      transform:'scale(1.5)'
+    },
+  },
+  socialIconsList:{
+    display: 'flex', 
+    alignContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row', 
+    justifyContent: 'center',
   },
   soloProjectsLandingContainer:{
     backgroundImage: `url(${ githubWallpaper })`,

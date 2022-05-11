@@ -15,6 +15,11 @@ const Footer = () => {
 
   return(
     <Box className={classes.footerContainer}>
+      <div className={classes.footerParagraphContainer}>
+        <p className={classes.footerParagraph}>
+          Gracias for Visiting, Connect With Me !
+        </p>
+      </div>
       <Box className={classes.socialIconsList}>
         {mediaList.map(( item ) => (
           <ListItem
