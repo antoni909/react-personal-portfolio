@@ -71,7 +71,7 @@ const Education = () => {
   const [renderSkill, setRenderSkill] = useState(false)
   
   const renderSkills = (targetSkill) => {
-    const hackerRank = 'covers topics like, Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.'
+    const hackerRank = 'JavaScript Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.'
     const georgiaTech = 'Usability User Experience (UX), User Experience Design (UXD), User Interface'
     const codeFellows = 'Git, GitHub, Node.js, ESLint, Heroku, React, Redux Toolkit, Jest,Redux, React-Native, Socket.IO, Express JSAdvanced Server-Side and Client-Side JavaScript React and component frameworks Advanced HTML, CSS, Data Structures and Algorithms,Cloud integration and deployments with AWS tools like S3, Lambda '
     const skillsObj = {
@@ -157,19 +157,19 @@ const Education = () => {
               I have aquired skills in Full Stack Web Development
             </h2>
             <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
-            <p className={classes.educationParagraph}>hover to see the skills I have attained</p>
+            <p className={classes.educationParagraph}>Psst... hover to see the skills I have attained</p>
             {renderSkill}
           </div>
           <Box className={classes.educationCertsContainer}>
             { renderRelatedEd( relatedEd ) }
           </Box>
-
+  {/* Previous Education */}
       </Box>
       <Box className={classes.educationPreviousContainer}>
         <Box className={classes.educationContainer}>
-          <div className={classes.educationTitleContainer}>
+          <div className={classes.educationPreviousTitleContainer}>
             <h2 className={classes.educationTitle}>
-              Look into Previous Education and Experience
+              See into my Past Previous Education and Experience
             </h2>
             <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
           </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Home from '../Home/Home'
+import Footer from '../Footer/Footer.jsx'
 import { Outlet, Link } from 'react-router-dom';
 import useStyles from "../Theme/themes";
 
@@ -119,6 +120,7 @@ const Nav = () => {
 
       <Outlet/>
       <Home />
+      <Footer />
     </Box>
   );
 }

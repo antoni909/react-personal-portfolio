@@ -14,7 +14,7 @@ const Home = () => {
   return (
   
     <Box>
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         <Grid item xs={12}>
           <Landing />
         </Grid>

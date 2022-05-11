@@ -1,23 +1,49 @@
 import { makeStyles } from "@material-ui/core";
-import landing from "../Assets/images/landingII.jpg";
 import resumeBck from "../Assets/images/resumeBackgroundTemp.jpg";
+import aboutBackgroundImage from "../Assets/images/aboutBackgroundImage.jpg"
 import githubWallpaper from "../Assets/images/githubWallpaper.jpg";
-
 const useStyles = makeStyles((theme) => ({
+  aboutBackground:{
+    backgroundImage:`url(${ aboutBackgroundImage })`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
   aboutContainer:{
     minHeight: "100vh",
-    backgroundColor:'#f4f4f4', 
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'center',
     flexWrap: 'wrap',  
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
   },
   aboutCard:{
-    maxWidth: 500, 
-    backgroundColor: 'transparent',
-    boxShadow: 'none',
+    maxWidth: '750px',
+    minWidth:'100px',
+    maxHeight:'400px',
+    marginTop:'0px',
+    overflow:'scroll',
+  },
+  aboutTitle:{
+    color: '#30D5C8',
+    fontSize:'200px',
+    fontWeight:'900',
+    margin:'0px',
+    padding:'0px'
+  },
+  aboutCardParagraph:{
+    fontSize:'20px',
+    fontWeight:'bold',
+    textAlign:'justify',
+    lineHeight:'1.8'
+  },
+  aboutQuote:{
+    fontSize:'20px',
+    color:'#30D5C8'
+  },
+  aboutQuoteContainer:{
+    textJustify:'auto',
+    lineHeight:'1.2',
   },
   button: {
     fontSize: 25,
@@ -44,6 +70,15 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "transparent",
       transform:'scale(1.05)'
     },
+  },
+  educationCertsContainer:{
+  display: 'flex', 
+  alignItems: 'center',
+  alignContent: 'space-around',  
+  flexWrap: 'wrap', 
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  gap:'10px'
   },
   educationContainer:{
     minHeight:'100vh',
@@ -81,27 +116,32 @@ const useStyles = makeStyles((theme) => ({
     maxHeigh:'1px',
     paddingLeft:'7%',
   },
-  educationCertsContainer:{
-    display: 'flex', 
-    alignItems: 'center',
-    alignContent: 'space-around',  
-    flexWrap: 'wrap', 
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    gap:'10px'
-  },
   educationPreviousContainer:{
     minHeight:'100vh',
+    background:'rgb(3 3 5)',
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'space-around',  
     flexWrap: 'wrap', 
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    p: 1,
-    m: 1,
-    bgcolor: 'red',
-    borderRadius: 5 
+    justifyContent: 'space-around', 
+  },
+  educationPreviousTitleContainer:{
+    color:'whitesmoke',
+    maxWidth:'50%',
+    margin: 'auto',
+    marginLeft:'5%',
+    minHeight:'0px',
+    height:'600px',
+    width: '50%',
+    padding: '10px',
+  },
+  footerBackgroundImage:{
+    background:'black',
+    color:'whitesmoke'
+  },
+  footer:{
+    minHeight:'66vh',
   },
   ghBackground: {
     backgroundImage: `url(${githubWallpaper})`,
@@ -143,7 +183,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   groupProjectsCardHeader:{
-    // border:'1px black solid',
     display: "flex",
     backgroundColor:'transparent',
     alignItems: "center",
@@ -170,7 +209,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   landingBackground: {
-    backgroundImage: `url(${landing})`,
+    background: 'linear-gradient(to right, #000428, #004e92)',
     minHeight: "100vh",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -182,18 +221,26 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignContent: "center",
     flexDirection: "column",
+    justifyContent:'center'
+  },
+  landingVerticalLine:{
+    borderLeft: '3px solid white',
+    borderImage:'linear-gradient(to bottom, #30D5C8,rgba(0, 0, 0, 0)) 1 100%',
+    height: '40vh',
+    marginTop:'0px'
   },
   landingTitle: {
+    color: '#30D5C8',
     fontSize:'145px',
     fontWeight:'900',
-    color: 'whitesmoke',
     marginBottom:'0px',
+    maxWidth:'90vw',
     padding:'0px'
   },
   landingSubTitle: {
-    fontSize:'60px',
-    fontWeight:'800',
     color: '#30D5C8',
+    fontSize:'90px',
+    fontWeight:'800',
     margin:'0px',
     padding:'0px'
   },
