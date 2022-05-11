@@ -71,7 +71,7 @@ const Nav = () => {
               {mediaList.map(( item ) => (
                 <ListItem
                   button
-                  className={ classes.navIconOnHover }
+                  className={ classes.socialIconOnHover }
                   key={ item.text }
                 >
                   <SocialIcon 

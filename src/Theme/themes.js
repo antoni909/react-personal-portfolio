@@ -154,7 +154,6 @@ const useStyles = makeStyles((theme) => ({
   },
   educationPreviousTitleContainer:{
     maxWidth:'50%',
-    // margin: '10%',
     margin:' 0% 10%',
     width: '50%',
     padding: '10px',
@@ -166,12 +165,27 @@ const useStyles = makeStyles((theme) => ({
     maxHeigh:'1px',
     paddingLeft:'7%',
   },
-  footerBackgroundImage:{
-    background:'black',
-    color:'whitesmoke'
+  footerContainer:{
+    minHeight:'66.6vh',
+    background:'linear-gradient(to right, #000428, #004e92)',
+    display: 'flex', 
+    alignContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column', 
+    flexWrap: 'wrap', 
+    justifyContent: 'center',
   },
-  footer:{
-    minHeight:'66vh',
+  socialIconsList:{
+    display: 'flex', 
+    alignContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row', 
+    justifyContent: 'center',
+  },
+  footerVerticalLine:{
+    borderLeft: '3px solid white',
+    borderImage:'linear-gradient(to top, #30D5C8,rgba(0, 0, 0, 0)) 1 100%',
+    height: '30vh',
   },
   ghBackground: {
     backgroundImage: `url(${githubWallpaper})`,
@@ -239,7 +253,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   landingBackground: {
-    background: 'linear-gradient(to right, #000428, #004e92)',
+    background:'linear-gradient(to right, #000428, #004e92)',
     minHeight: "100vh",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -277,7 +291,7 @@ const useStyles = makeStyles((theme) => ({
   navMenuContainer:{
     margin: '50px 25px', 
     position:'fixed', 
-    zIndex:0
+    zIndex:100
   },
   navIconMenu:{
     display: 'flex', 
@@ -287,7 +301,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap', 
     justifyContent: 'center',
   },
-  navIconOnHover:{
+  socialIconOnHover:{
     '&:hover':{
       transform:'scale(1.25)'
     },
