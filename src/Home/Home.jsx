@@ -1,4 +1,5 @@
 import About from './About'
+import Contact from '../Contact/Contact'
 import Education from './Education'
 import Landing from './Landing'
 import Projects from './Projects'
@@ -26,6 +27,9 @@ const Home = () => {
         </Grid>
         <Grid item xs={12}>
           <Education />
+        </Grid>
+        <Grid item xs={12}>
+          <Contact />
         </Grid>
       </Grid>
       <ScrollToTop />

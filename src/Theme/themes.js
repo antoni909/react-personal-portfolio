@@ -3,6 +3,7 @@ import resumeBck from "../Assets/images/resumeBackgroundTemp.jpg";
 import aboutBackgroundImage from "../Assets/images/aboutBackgroundImage.jpg"
 import githubWallpaper from "../Assets/images/githubWallpaper.jpg";
 import prevExpBackground from "../Assets/images/prevExperienceBackground.jpg";
+import contactBackground from "../Assets/images/contactBackground.jpg";
 
 const useStyles = makeStyles((theme) => ({
   aboutBackground:{
@@ -72,6 +73,25 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "transparent",
       transform:'scale(1.05)'
     },
+  },
+  contactBackground:{
+    backgroundImage:`url(${ contactBackground })`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
+  contactContainer:{
+    minHeight: "100vh",
+    display: 'flex', 
+    alignItems: 'center',
+    alignContent: 'center',
+    flexWrap: 'wrap',  
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  contactTitle:{
+    color:'#30D5C8',
+    fontWeight:'900',
+    fontSize:'60px',
   },
   educationCertsContainer:{
   display: 'flex', 
@@ -187,6 +207,49 @@ const useStyles = makeStyles((theme) => ({
     borderLeft: '3px solid white',
     borderImage:'linear-gradient(to top, #30D5C8,rgba(0, 0, 0, 0)) 1 100%',
     height: '30vh',
+  },
+  formButton:{
+    backgroundColor:'green',
+    color:'white',
+    borderRadius:'3px',
+    fontSize: 20,
+    '&:hover':{
+      transform:'scale(1.3)'
+    },
+  },
+  formButtonContainer:{
+    display:'flex',
+    alignItems: 'center',
+    alignContent: 'center',  
+    justifyContent: 'center',
+    flexDirection: 'column',
+    marginTop:'50px',
+    gap:'20px',
+  },
+  formContainer:{
+    border:'5px black solid',
+    width:'650px',
+    height:'750px',
+    display:'flex',
+    alignItems: 'center',
+    alignContent: 'center',  
+    justifyContent: 'center',
+    flexDirection: 'column',
+    '& .MuiTextField-root': { m: 1, width: '25ch' },
+  },
+  formGroup:{
+    display:'flex',
+    alignItems: 'center',
+    alignContent: 'center',  
+    justifyContent: 'center',
+    flexDirection: 'column',
+    gap:'50px',
+  },
+  formSentMessage:{
+    color:'#30D5C8',
+    fontSize:'20px',
+    fontWeight:'700',
+    width:'80%'
   },
   ghBackground: {
     backgroundImage: `url(${githubWallpaper})`,

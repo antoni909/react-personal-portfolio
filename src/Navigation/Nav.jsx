@@ -29,11 +29,6 @@ const menuList = [
     to="/resume">Resume</Link>,
     menuIcon: <FcDocument style={{ height: 40, width: 40 }}/>
   },
-  {
-    text: 'Contact', 
-    path: <Link style={{ textDecoration: 'none' }} to="/contact">Contact</Link>,
-    menuIcon: <FcContacts style={{ height: 40, width: 40 }}/>
-  }
 ]
 
 // DONE: Redesign drawer navigation to instead use a hamburger menu
