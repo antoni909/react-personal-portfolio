@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 
+import emailjs from '@emailjs/browser';
+
 const ContactForm = () => {
   const  classes =  useStyles();
   const [name, setName] = useState('');
@@ -18,9 +20,29 @@ const ContactForm = () => {
     setEmailSent(true);
    }
 
-  const  handleSubmit = () => { (name && email && message)
+  const  handleSubmit = () => { 
+    (name && email && message)
       ? clearFields()
       : alert('Not So Fast! Please Fill All Fields')
+
+      let templateParams = {
+        name,
+        email,
+        message
+      }
+      console.log('templateParams',templateParams)
+      emailjs.send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID, 
+        templateParams, 
+        process.env.REACT_APP_PUBLIC_KEY,
+      )
+      .then((response) => {
+         console.log('SUCCESS!', response.status, response.text);
+      }, (err) => {
+         console.log('FAILED...', err);
+      });
+
   }
   return(
     <Box className={ classes.contactBackground }>

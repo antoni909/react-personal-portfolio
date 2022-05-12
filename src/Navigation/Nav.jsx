@@ -14,7 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import { FaHamburger } from 'react-icons/fa';
-import { FcDocument, FcEngineering, FcContacts } from "react-icons/fc";
+import { FcDocument, FcEngineering } from "react-icons/fc";
 
 const menuList = [
   {
