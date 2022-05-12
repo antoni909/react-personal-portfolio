@@ -1,5 +1,4 @@
 import gh_logo from '../Assets/images/ghlogo.png'
-import githubWallpaper from '../Assets/images/githubWallpaper.jpg'
 import { useOctokit } from '../Hooks/useOctokit'
 import { useNavigate } from 'react-router-dom'
 import useStyles from '../Theme/themes'
@@ -24,53 +23,30 @@ const SoloProjects = () => {
     else{
       return(
         <>
-          <Box
-            sx={{
-              backgroundColor: 'primary.dark',
-              display: 'flex', 
-              alignContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'row', 
-              flexWrap: 'wrap', 
-              justifyContent: 'center',
-              minHeight: '100vh',
-            }}
+          <Box 
+            className={classes.soloProjectsReposContainer} 
+            gap={ 1 }
           >
             {repos && repos.map( repo => (
               <Card
-                key={repo.name} 
-                sx={{ 
-                  maxWidth: 340, 
-                  minWidth: 340, 
-                  minHeight: 240,
-                  p: 1,
-                  m: 1, 
-                }}
+                key={ repo.name }
+                className={classes.soloProjectsReposCard}
               >
               <CardHeader
-                title={repo.name}
+                title={ repo.name }
               />
               <CardContent>
-                <Box
-                  sx={{
-                    display:'flex',
-                    alignContent: 'center',
-                    alignItems: 'center',
-                    flexDirection: 'row', 
-                    flexWrap: 'wrap', 
-                    justifyContent: 'space-between',
-                  }}
-                >
+                <Box className={classes.soloProjectsReposCardFlex} >
                   <Chip
                     avatar={
                       <img
                         alt="github repo"
                         height="40"
-                        src={gh_logo}
+                        src={ gh_logo }
                       />
                     }
                     label="GH Repo"
-                    onClick={()=> window.open(repo.html_url)}
+                    onClick={ ()=> window.open(repo.html_url) }
                     variant="outlined"
                   />
                   <Typography 
@@ -82,18 +58,18 @@ const SoloProjects = () => {
                   <Typography 
                     component="div"
                     variant="subtitle2" 
-                    >{repo.description} 
+                    >{ repo.description } 
                   </Typography>
               </CardContent>
               </Card>
             ))}
           </Box>
           <Box
-            sx={{display:'flex', direction:'column'}}
+            sx={{ display:'flex', direction:'column' }}
           >  
             <ScrollToTop />
-            <div className={classes.toHomeButton}>
-              <FaHome onClick={() => navigate('/') }> 
+            <div className={ classes.toHomeButton }>
+              <FaHome onClick={ () => navigate('/') }> 
               </FaHome>
             </div>
           </Box>
@@ -104,27 +80,8 @@ const SoloProjects = () => {
 
   return (
     <>
-      <Box 
-        style={{
-          backgroundImage: `url(${githubWallpaper})`,
-          backgroundSize: "cover",
-          backgroundRepeat: 'no-repeat',
-          height: "60vh",
-          borderRadius: '4px',
-          display: 'flex', 
-          alignContent: 'center',
-          alignItems: 'center',
-          flexWrap: 'wrap', 
-          justifyContent: 'center',
-        }}
-      >
-        <Card 
-          sx={{
-            maxWidth: 500,
-            marginLeft: '20%', 
-            backgroundColor: 'transparent',
-            boxShadow: 'none',}}
-          >
+      <Box className={classes.soloProjectsLandingContainer} >
+        <Card className={classes.soloProjectsLandingCard} >
           <Typography
             variant='h1'
             component="div"
@@ -133,6 +90,7 @@ const SoloProjects = () => {
           <Typography
             variant='h4'
             component="div"
+            sx={{ marginLeft:10 }}
           > to my solo
           </Typography>
           <Typography

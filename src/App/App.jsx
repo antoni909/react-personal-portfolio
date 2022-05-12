@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Resume from '../Resume/Resume';
 import Contact from '../Contact/Contact';
 import SoloProjects from '../Home/SoloProjects';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
