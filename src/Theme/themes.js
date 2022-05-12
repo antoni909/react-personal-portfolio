@@ -214,7 +214,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius:'3px',
     fontSize: 20,
     '&:hover':{
-      transform:'scale(1.3)'
+      backgroundColor:'black'
     },
   },
   formButtonContainer:{
@@ -227,8 +227,7 @@ const useStyles = makeStyles((theme) => ({
     gap:'20px',
   },
   formContainer:{
-    border:'5px black solid',
-    width:'650px',
+    width:'550px',
     height:'750px',
     display:'flex',
     alignItems: 'center',
