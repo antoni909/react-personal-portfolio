@@ -3,6 +3,7 @@ import resumeBck from "../Assets/images/resumeBackgroundTemp.jpg";
 import aboutBackgroundImage from "../Assets/images/aboutBackgroundImage.jpg"
 import githubWallpaper from "../Assets/images/githubWallpaper.jpg";
 import prevExpBackground from "../Assets/images/prevExperienceBackground.jpg";
+import contactBackground from "../Assets/images/contactBackground.jpg";
 
 const useStyles = makeStyles((theme) => ({
   aboutBackground:{
@@ -73,6 +74,25 @@ const useStyles = makeStyles((theme) => ({
       transform:'scale(1.05)'
     },
   },
+  contactBackground:{
+    backgroundImage:`url(${ contactBackground })`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
+  contactContainer:{
+    minHeight: "100vh",
+    display: 'flex', 
+    alignItems: 'center',
+    alignContent: 'center',
+    flexWrap: 'wrap',  
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  contactTitle:{
+    color:'#30D5C8',
+    fontWeight:'900',
+    fontSize:'60px',
+  },
   educationCertsContainer:{
   display: 'flex', 
   alignItems: 'center',
@@ -80,13 +100,15 @@ const useStyles = makeStyles((theme) => ({
   flexWrap: 'wrap', 
   flexDirection: 'row',
   justifyContent: 'space-around',
-  gap:'10px'
+  gap:'10px',
   },
   educationContainer:{
     minHeight:'100vh',
+    border:'5px black solid',
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
+    overflow:'scroll',
   },
   educationTitleContainer:{
     maxWidth:'50%',
@@ -102,12 +124,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight:'900',
     fontSize:'60px',
     textAlign:'left',
-    lineHeight:'1.6em',
+    lineHeight:'1.3em',
   },
   educationParagraph:{
     color:'black',
     fontSize:'20px',
     textAlign:'justify',
+    lineHeight:'1.8em',
     maxWidth:'90%',
   },
   educationPrevExpCarousel:{
@@ -162,8 +185,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize:'20px',
     textAlign:'justify',
     maxWidth:'90%',
-    maxHeigh:'1px',
-    paddingLeft:'7%',
   },
   footerContainer:{
     minHeight:'66.6vh',
@@ -187,6 +208,48 @@ const useStyles = makeStyles((theme) => ({
     borderLeft: '3px solid white',
     borderImage:'linear-gradient(to top, #30D5C8,rgba(0, 0, 0, 0)) 1 100%',
     height: '30vh',
+  },
+  formButton:{
+    backgroundColor:'green',
+    color:'white',
+    borderRadius:'3px',
+    fontSize: 20,
+    '&:hover':{
+      backgroundColor:'black'
+    },
+  },
+  formButtonContainer:{
+    display:'flex',
+    alignItems: 'center',
+    alignContent: 'center',  
+    justifyContent: 'center',
+    flexDirection: 'column',
+    marginTop:'50px',
+    gap:'20px',
+  },
+  formContainer:{
+    width:'550px',
+    height:'750px',
+    display:'flex',
+    alignItems: 'center',
+    alignContent: 'center',  
+    justifyContent: 'center',
+    flexDirection: 'column',
+    '& .MuiTextField-root': { m: 1, width: '25ch' },
+  },
+  formGroup:{
+    display:'flex',
+    alignItems: 'center',
+    alignContent: 'center',  
+    justifyContent: 'center',
+    flexDirection: 'column',
+    gap:'50px',
+  },
+  formSentMessage:{
+    color:'#30D5C8',
+    fontSize:'20px',
+    fontWeight:'700',
+    width:'80%'
   },
   ghBackground: {
     backgroundImage: `url(${githubWallpaper})`,
@@ -314,18 +377,18 @@ const useStyles = makeStyles((theme) => ({
     border:'5px red solid',
   },
   relatedEducationCard:{
-    maxWidth: 340,
+    borderRadius: 3,
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'space-around',  
     flexWrap: 'wrap', 
     flexDirection: 'row',
     justifyContent: 'space-around',
-    borderRadius: 3,
     '&:hover':{
       backgroundColor:'#f4f4f4',
       transform:'scale(1.01)'
     },
+    maxWidth: 340,
     padding:'5px 5px',
   },
   resumeBackground: {

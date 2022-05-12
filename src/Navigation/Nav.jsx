@@ -14,7 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import { FaHamburger } from 'react-icons/fa';
-import { FcDocument, FcEngineering, FcContacts } from "react-icons/fc";
+import { FcDocument, FcEngineering } from "react-icons/fc";
 
 const menuList = [
   {
@@ -29,11 +29,6 @@ const menuList = [
     to="/resume">Resume</Link>,
     menuIcon: <FcDocument style={{ height: 40, width: 40 }}/>
   },
-  {
-    text: 'Contact', 
-    path: <Link style={{ textDecoration: 'none' }} to="/contact">Contact</Link>,
-    menuIcon: <FcContacts style={{ height: 40, width: 40 }}/>
-  }
 ]
 
 // DONE: Redesign drawer navigation to instead use a hamburger menu

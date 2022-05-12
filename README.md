@@ -7,6 +7,8 @@
 
 ## Resources Used
 
+EmailJS - [to send email directly from javaScript](https://www.emailjs.com/)
+
 GitHub API - [fetch repositories](https://docs.github.com/en/rest/reference/repos)
 
 GitHub Wallpaper - [WalpaperCave](https://wallpapercave.com/w/wp3082268)
@@ -20,8 +22,6 @@ React-PDF - [Display PDFs in your React app as easily as if they were images.](h
 ## Attributions
 
 Social media icons from [react-social-icons](https://www.npmjs.com/package/react-social-icons)
-
-Skills marquee component from [react-fast-marquee](https://www.npmjs.com/package/react-fast-marquee)
 
 Programmer Quotes from [skolakoda](https://github.com/skolakoda/programming-quotes-api)
 
