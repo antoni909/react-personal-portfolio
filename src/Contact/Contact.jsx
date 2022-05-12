@@ -1,4 +1,3 @@
-
 import ContactForm from './ContactForm'
 
 const Contact = () => {

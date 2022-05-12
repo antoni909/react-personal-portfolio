@@ -27,60 +27,51 @@ const ContactForm = () => {
   return(
     <Box className={classes.contactBackground}>
       <Box className={classes.contactContainer}>
-      <h1 className={classes.contactTitle}>Get In Touch, Don't Be Shy</h1>
-      <Box 
-        autoComplete="on"
-        className={classes.formContainer}
-        component='form'
-        >
-        <div className={classes.formGroup}>
-          <TextField
-            label="Name"
-            type="text"
-            onChange={ e => setName(e.target.value) } 
-            required
-          />
-          <TextField
-            label="Email"
-            type="email"
-            onChange={ e => setEmail(e.target.value) } 
-            required
-          />
-          <TextField
-            type="text"
-            label="Message"
-            multiline
-            onChange={ e => setMessage(e.target.value) }
-            required
-            maxRows={ 10 }
-          />
-        </div>
-        <div className={classes.formButtonContainer}>
-          {!emailSent
-            ?<button 
-              className={classes.formButton}
-              onClick={ handleSubmit }
-              >Send</button>
-            : null
-          }
-          {
-            emailSent 
-              ?<p className={classes.formSentMessage}>
-                Thanks for reaching out, I will reply as soon as possible! 
-                </p>
-              :null
-          }
-        </div>
-      </Box>
-
-      <Button 
-            className={classes.Button}
-            color="primary"
-            onClick={() => navigate('/') }
-            size="medium"
-            variant="contained"
-          > home 
-      </Button>
+        <h1 className={classes.contactTitle}>Get In Touch, Don't Be Shy .</h1>
+        <Box 
+          autoComplete="on"
+          className={classes.formContainer}
+          component='form'
+          >
+          <div className={classes.formGroup}>
+            <TextField
+              label="Name"
+              type="text"
+              onChange={ e => setName(e.target.value) } 
+              required
+            />
+            <TextField
+              label="Email"
+              type="email"
+              onChange={ e => setEmail(e.target.value) } 
+              required
+            />
+            <TextField
+              type="text"
+              label="Message"
+              multiline
+              onChange={ e => setMessage(e.target.value) }
+              required
+              maxRows={ 10 }
+            />
+          </div>
+          <div className={classes.formButtonContainer}>
+            {!emailSent
+              ?<button 
+                className={classes.formButton}
+                onClick={ handleSubmit }
+                >Send</button>
+              : null
+            }
+            {
+              emailSent 
+                ?<p className={classes.formSentMessage}>
+                  Thanks for reaching out, I will reply as soon as possible! 
+                  </p>
+                :null
+            }
+          </div>
+        </Box>
       </Box>
     </Box>
   )
