@@ -100,13 +100,15 @@ const useStyles = makeStyles((theme) => ({
   flexWrap: 'wrap', 
   flexDirection: 'row',
   justifyContent: 'space-around',
-  gap:'10px'
+  gap:'10px',
   },
   educationContainer:{
     minHeight:'100vh',
+    border:'5px black solid',
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
+    overflow:'scroll',
   },
   educationTitleContainer:{
     maxWidth:'50%',
@@ -122,12 +124,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight:'900',
     fontSize:'60px',
     textAlign:'left',
-    lineHeight:'1.6em',
+    lineHeight:'1.3em',
   },
   educationParagraph:{
     color:'black',
     fontSize:'20px',
     textAlign:'justify',
+    lineHeight:'1.8em',
     maxWidth:'90%',
   },
   educationPrevExpCarousel:{
@@ -182,8 +185,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize:'20px',
     textAlign:'justify',
     maxWidth:'90%',
-    maxHeigh:'1px',
-    paddingLeft:'7%',
   },
   footerContainer:{
     minHeight:'66.6vh',
@@ -376,18 +377,18 @@ const useStyles = makeStyles((theme) => ({
     border:'5px red solid',
   },
   relatedEducationCard:{
-    maxWidth: 340,
+    borderRadius: 3,
     display: 'flex', 
     alignItems: 'center',
     alignContent: 'space-around',  
     flexWrap: 'wrap', 
     flexDirection: 'row',
     justifyContent: 'space-around',
-    borderRadius: 3,
     '&:hover':{
       backgroundColor:'#f4f4f4',
       transform:'scale(1.01)'
     },
+    maxWidth: 340,
     padding:'5px 5px',
   },
   resumeBackground: {
