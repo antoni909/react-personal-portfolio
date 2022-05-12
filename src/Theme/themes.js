@@ -66,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
   clickToSoloProjects:{
     color:'#30D5C8',
     backgroundColor:'transparent',
-    border:'3px black solid',
     fontSize:'40px',
     "&:hover": {
       color:'black',
@@ -104,7 +103,6 @@ const useStyles = makeStyles((theme) => ({
   },
   educationContainer:{
     minHeight:'100vh',
-    border:'5px black solid',
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
@@ -372,9 +370,6 @@ const useStyles = makeStyles((theme) => ({
   },
   orgProjectsContainer:{
     minHeight: '100vh',
-  },
-  previousExperienceCarousel:{
-    border:'5px red solid',
   },
   relatedEducationCard:{
     borderRadius: 3,

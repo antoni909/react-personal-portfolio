@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import useStyles from "../Theme/themes";
-import cf_cert from '../Assets/images/cf_cert.png'
+
+import cf_cert from '../Assets/certs/cf_cert.png'
 import cf_icon from '../Assets/images/cf.png'
-import gt_logo  from "../Assets/logos/gt_logo.jpg";
 import courseraUX_cert  from "../Assets/certs/courseraUX_cert.jpg";
+import gt_logo  from "../Assets/logos/gt_logo.jpg";
+import sololearn_logo  from "../Assets/logos/sololearn_logo.png";
+import hr_basic_js from '../Assets/certs/hr_basic_js.png'
+import soloLearn_CSS from '../Assets/certs/soloLearn_CSS.jpg'
 import hr_logo from '../Assets/images/hr_logo.jpeg'
-import hr_basic_js from '../Assets/images/hr_basic_js.png'
+import uniform_pic from '../Assets/images/uniform_pic.jpg'
+import usmc_logo from '../Assets/images/usmc_logo.jpg'
 import wou_logo from '../Assets/images/wou_logo.png'
 import wou_soccer from '../Assets/images/wou_soccer.jpg'
-import usmc_logo from '../Assets/images/usmc_logo.jpg'
-import uniform_pic from '../Assets/images/uniform_pic.jpg'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -42,6 +45,14 @@ const relatedEd = [
     name: 'Georgia Institute of Technology',
     url: 'https://coursera.org/share/86c73e8888cb89d07e40c59aef472d06',
     skill:'UX Design',
+  },
+  {
+    icon: sololearn_logo, 
+    certification: soloLearn_CSS, 
+    graduation:'May 2022',
+    name: 'sololearn',
+    url: 'https://www.sololearn.com/',
+    skill:'CSS',
   },
 ]
 const previousEd = [
@@ -76,10 +87,12 @@ const Education = () => {
     const hackerRank = 'JavaScript Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.'
     const georgiaTech = 'Usability User Experience (UX), User Experience Design (UXD), User Interface'
     const codeFellows = 'Git, GitHub, Node.js, ESLint, Heroku, React, Redux Toolkit, Jest,Redux, React-Native, Socket.IO, Express JSAdvanced Server-Side and Client-Side JavaScript React and component frameworks Advanced HTML, CSS, Data Structures and Algorithms,Cloud integration and deployments with AWS tools like S3, Lambda '
+    const sololearn = 'CSS3 basics,properties, position and layout, working with text,  gradients and backgrounds, transitions and transforms, css filters'
     const skillsObj = {
       'HackerRank': hackerRank,
       'CodeFellows': codeFellows,
-      'Georgia Institute of Technology': georgiaTech
+      'Georgia Institute of Technology': georgiaTech,
+      'sololearn': sololearn,
     }
     setRenderSkill(
       <p className={classes.educationSkillParagraph}>
