@@ -338,21 +338,17 @@ const useStyles = makeStyles((theme) => ({
     marginTop:'0px'
   },
   landingTitle: {
-    border:'3px green solid',
     color: '#30D5C8',
     fontSize:'155px',
     fontWeight:'900',
   },
   landingTitleContainer:{
-    border:'3px red solid',
     margin:'0 15%',
   },
   landingSubTitle: {
-    border:'3px red solid',
     color: '#30D5C8',
     fontSize:'90px',
     fontWeight:'800',
-    margin:'0 15%',
   },
   navMenuContainer:{
     margin: '50px 25px', 

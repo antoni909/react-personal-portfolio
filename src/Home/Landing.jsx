@@ -16,9 +16,11 @@ const Landing = () => {
         
         <div className={classes.landingVerticalLine}></div>
         
-        <h5 className={classes.landingSubTitle}>
-          Web Developer&nbsp;.
-        </h5>
+        <div className={classes.landingTitleContainer}>
+          <h5 className={classes.landingSubTitle}>
+            Web Developer&nbsp;.
+          </h5>
+        </div>
       
       </Box>
     </Box>
