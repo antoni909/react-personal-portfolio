@@ -26,18 +26,18 @@ const MenuList = () => {
   const classes = useStyles();
   return(
     <List>
-    {menuItemsList.map(( item ) => (
-      <ListItem
-        button
-        className={classes.hamburgerMenuIconOnHover}
-        key={item.text}
-      >
-        <ListItemIcon>
-          {item.menuIcon}
-        </ListItemIcon>
-        <ListItemText primary={item.path} />
-      </ListItem>
-    ))}
+      {menuItemsList.map(( item ) => (
+        <ListItem
+          button
+          className={classes.hamburgerMenuIconOnHover}
+          key={item.text}
+        >
+          <ListItemIcon>
+            {item.menuIcon}
+          </ListItemIcon>
+          <ListItemText primary={item.path} />
+        </ListItem>
+      ))}
   </List>
   )
 }

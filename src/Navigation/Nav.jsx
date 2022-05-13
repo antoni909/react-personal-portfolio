@@ -26,7 +26,7 @@ const Nav = () => {
   return (
     <Box>
       <CssBaseline />
-
+      
       <Box 
         className={ classes.navMenuContainer }
       >
