@@ -7,7 +7,7 @@ import ListItemIcon from '@mui/material/ListItemText';
 import ListItemText from '@mui/material/ListItemText';
 import { FcDocument, FcEngineering } from "react-icons/fc";
 
-const socialMediaList = [
+const menuItemsList = [
   {
     text: 'Projects', 
     path: <Link style={{ textDecoration: 'none' }} 
@@ -22,11 +22,11 @@ const socialMediaList = [
   },
 ]
 
-const SocialMediaList = () => {
+const MenuList = () => {
   const classes = useStyles();
   return(
     <List>
-    {socialMediaList.map(( item ) => (
+    {menuItemsList.map(( item ) => (
       <ListItem
         button
         className={classes.hamburgerMenuIconOnHover}
@@ -42,4 +42,4 @@ const SocialMediaList = () => {
   )
 }
 
-export default SocialMediaList
+export default MenuList

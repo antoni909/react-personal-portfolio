@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Home from '../Home/Home'
 import Footer from '../Footer/Footer.jsx'
+import MenuList from '../Navigation/MenuList'
 import { Outlet } from 'react-router-dom';
 import useStyles from '../Theme/themes';
-import SocialMediaList from './SocialMediaList'
 
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -46,9 +46,10 @@ const Nav = () => {
           onClose={ handleClose }
         >
           <Box className={classes.hamburgerMenuContainer} >
-            <SocialMediaList />
+            <MenuList />
           </Box>  
         </Menu>
+
       </Box>
 
       <Outlet/>
