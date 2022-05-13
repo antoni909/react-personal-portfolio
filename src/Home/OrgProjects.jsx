@@ -21,7 +21,7 @@ import Chip from "@mui/material/Chip";
 
 // DONE: map over orgs to render Name, Members Name/Avatar, Description, url
 // DONE: pass in repos_url for each organization and render the organization repo url in the GH Chip Component
-// TODO: create class for Box parent and Card child items
+// DONE: create class for Box parent and Card child items
 
 // dummy data
 // eslint-disable-next-line no-unused-vars
@@ -129,10 +129,14 @@ const OrgProjects = () => {
   useEffect(() => {
     getOrgMembers(orgData);
   }, [orgData]);
+  
   return (
     <Box
-      className={classes.orgProjectsContainer}
+      className={ classes.orgProjectsContainer }
     >
+      <div className={ classes.orgProjectTitleContainer }>
+        <h1 className={ classes.orgProjectsTitle }> See what I have built with other developers! </h1>
+      </div>
       <Box 
         className={ classes.groupProjectsContainer } 
         gap={ 3 }
@@ -143,23 +147,19 @@ const OrgProjects = () => {
               className={ classes.groupProjectsCard }
               elevation={ 5 }
             >
-              <CardHeader 
-                title={ org.orgName }  
-              />
+              <CardHeader title={ org.orgName }/>
               <Box
                 className={ classes.groupProjectsCardHeader }
                 gap={ 1 }
               >
-
                   { renderGHAvatar(org.orgName) }
                   { renderAvatars(org.membersList) }
-
               </Box>
               <Box className={classes.groupProjectsImageContainer}
               >{ placeHolderImage(org.orgName) }
               </Box>
             </Card>
-          ))}
+        ))}
       </Box>
       <Box
         className={classes.clickToSoloProjectsContainer}
@@ -167,7 +167,8 @@ const OrgProjects = () => {
         <Button
           className={classes.clickToSoloProjects}
           onClick={ () => navigate('/solo_projects')}
-        >See All GH Projects </Button>
+        >See All GH Projects 
+        </Button>
       </Box>
     </Box>
   );

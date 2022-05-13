@@ -100,6 +100,7 @@ const Education = () => {
       </p>
     )
   }
+
   const renderRelatedEd = ( list ) => {
 
     return list.map(item => (
@@ -108,7 +109,6 @@ const Education = () => {
         className={classes.relatedEducationCard}
         elevation={ 5 }
         onMouseEnter={()=> renderSkills(item.name)}
-        // onMouseLeave={()=> setRenderSkill(false)}
       >
           <CardHeader
             title={ item.name }
@@ -133,6 +133,7 @@ const Education = () => {
       </Card>
     ))
   }
+
   const renderPreviousExp = ( list ) => {
     return (
       <div className={classes.educationPrevCarouselContainer}>
@@ -145,8 +146,8 @@ const Education = () => {
               key={ item.name }
             >
                 <Card
-                  key={ item.name }
                   className={classes.educationPreviousExpCard}
+                  key={ item.name }
                 >
                   <CardHeader
                     title={ item.name }
@@ -168,20 +169,19 @@ const Education = () => {
                     alt={`${item.certification} certification`}
                   />
                 </Card>
-
             </Carousel.Item>
           ))}
         </Carousel>
-
       </div>
-
     )
   }
 
   return (
     <>
-    {/* Certifications */}
       <Box className={classes.educationContainer}>
+        <Box className={classes.educationCertsContainer}>
+          { renderRelatedEd( relatedEd ) }
+        </Box>
         <div className={classes.educationTitleContainer}>
           <h2 className={classes.educationTitle}>
             I have aquired skills in Full Stack Web Development
@@ -190,14 +190,8 @@ const Education = () => {
           <p className={classes.educationParagraph}>Psst... hover to see the skills I have attained</p>
           {renderSkill}
         </div>
-        <Box className={classes.educationCertsContainer}>
-          { renderRelatedEd( relatedEd ) }
-        </Box>
       </Box>
-
-    {/* Previous Experience */}
       <Box className={classes.educationPreviousExpContainer}>
-
         <div className={classes.educationPreviousTitleContainer}>
           <h2 className={classes.educationPrevTitle}>
             See into my Past Experience
@@ -211,34 +205,3 @@ const Education = () => {
 }
 
 export default Education;
-
-/*
-        {{list.map(item => (
-            <Card
-              key={ item.name }
-              className={classes.previousExperienceCard}
-            >
-              <CardHeader
-                title={ item.name }
-                subheader={`${item.skill}, ${item.graduation}`}
-                avatar={
-                  <Avatar aria-label={item.name}>
-                    <img
-                      alt="logo"
-                      height="40"
-                      onClick={()=> window.open(item.url)}
-                      src={item.icon}
-                    />
-                  </Avatar>
-                }
-              />
-              <CardMedia
-                component="img"
-                height="350"
-                width="350"
-                image={item.certification}
-                alt="certification"
-              />
-            </Card>
-        ))}}
-*/
