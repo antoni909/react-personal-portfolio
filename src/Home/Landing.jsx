@@ -8,9 +8,18 @@ const Landing = () => {
   return (
     <Box className={classes.landingBackground} >
       <Box className={classes.landingContainer} >
-        <h2 className={classes.landingTitle}>Hola, I'm Lorenzo.</h2>
+        <div className={classes.landingTitleContainer}>
+          <h1 className={classes.landingTitle}>
+            Hola, I'm Lorenzo&nbsp;.
+          </h1>
+        </div>
+        
         <div className={classes.landingVerticalLine}></div>
-        <h5 className={classes.landingSubTitle}>Web Developer .</h5>
+        
+        <h5 className={classes.landingSubTitle}>
+          Web Developer&nbsp;.
+        </h5>
+      
       </Box>
     </Box>
   );

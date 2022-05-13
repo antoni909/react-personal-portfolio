@@ -328,7 +328,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignContent: "center",
     flexDirection: "column",
-    justifyContent:'center'
+    justifyContent:'center',
+    textAlign:'center'
   },
   landingVerticalLine:{
     borderLeft: '3px solid white',
@@ -337,19 +338,21 @@ const useStyles = makeStyles((theme) => ({
     marginTop:'0px'
   },
   landingTitle: {
+    border:'3px green solid',
     color: '#30D5C8',
-    fontSize:'145px',
+    fontSize:'155px',
     fontWeight:'900',
-    marginBottom:'0px',
-    maxWidth:'90vw',
-    padding:'0px'
+  },
+  landingTitleContainer:{
+    border:'3px red solid',
+    margin:'0 15%',
   },
   landingSubTitle: {
+    border:'3px red solid',
     color: '#30D5C8',
     fontSize:'90px',
     fontWeight:'800',
-    margin:'0px',
-    padding:'0px'
+    margin:'0 15%',
   },
   navMenuContainer:{
     margin: '50px 25px', 
@@ -371,6 +374,15 @@ const useStyles = makeStyles((theme) => ({
   },
   orgProjectsContainer:{
     minHeight: '100vh',
+  },
+  orgProjectTitleContainer:{
+    textAlign:'center',
+    margin:'50px 15%'
+  },
+  orgProjectsTitle:{
+    color:'#30D5C8',
+    fontWeight:'900',
+    fontSize:'70px',
   },
   relatedEducationCard:{
     borderRadius: 3,

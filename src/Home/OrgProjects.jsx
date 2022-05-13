@@ -132,8 +132,11 @@ const OrgProjects = () => {
   
   return (
     <Box
-      className={classes.orgProjectsContainer}
+      className={ classes.orgProjectsContainer }
     >
+      <div className={ classes.orgProjectTitleContainer }>
+        <h1 className={ classes.orgProjectsTitle }> See what I have built with other developers! </h1>
+      </div>
       <Box 
         className={ classes.groupProjectsContainer } 
         gap={ 3 }
