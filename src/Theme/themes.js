@@ -90,7 +90,8 @@ const useStyles = makeStyles((theme) => ({
   contactTitle:{
     color:'#30D5C8',
     fontWeight:'900',
-    fontSize:'60px',
+    fontSize:'70px',
+    marginBottom:'50px'
   },
   educationCertsContainer:{
   display: 'flex', 

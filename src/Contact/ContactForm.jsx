@@ -96,7 +96,6 @@ const ContactForm = () => {
             </div>
           </Box>
         </Paper>
-      
       </Box>
     </Box>
   )
