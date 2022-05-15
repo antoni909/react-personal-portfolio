@@ -33,7 +33,6 @@ const previousEd = [
 const PreviousExp = () => {
 
   const classes = useStyles();
-
   const renderPreviousExp = ( list ) => {
     return (
       <div className={classes.educationPrevCarouselContainer}>
