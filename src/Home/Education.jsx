@@ -76,7 +76,7 @@ const previousEd = [
 
 // DONE: create class for Box parent and Card child items
 // DONE: create show skills on hover of certificate
-// FIX: popup text overflows into next component when hover over CF cert
+// DONE: popup text overflows into next component when hover over CF cert
 
 const Education = () => {
   
