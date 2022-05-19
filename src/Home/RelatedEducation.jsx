@@ -113,7 +113,7 @@ const RelatedEducation = () => {
       </Box>
       <div className={classes.educationTitleContainer}>
         <h2 className={classes.educationTitle}>
-          I have aquired skills in Full Stack Web Development
+          I have aquired skills in Web Development
         </h2>
         <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
         <p className={classes.educationParagraph}>Psst... hover to see the skills I have attained</p>
