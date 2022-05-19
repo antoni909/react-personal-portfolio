@@ -1,7 +1,7 @@
 <h1 align="center"> Welcome to my Professional Portfolio 👋 </h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/18523d22-bc55-4b27-94bb-eacb7e49e162/deploy-status)](https://app.netlify.com/sites/antoni909/deploys)
-[![pages-build-deployment](https://github.com/antoni909/react-personal-portfolio/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/antoni909/react-personal-portfolio/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/antoni909/react-personal-portfolio/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/antoni909/react-personal-portfolio/actions/workflows/pages/pages-build-deployment)[![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/antoni909/my-stack)[![Netlify Status](https://api.netlify.com/api/v1/badges/18523d22-bc55-4b27-94bb-eacb7e49e162/deploy-status)](https://app.netlify.com/sites/antoni909/deploys)
+
 
 # 🚧 This project is ongoing and under heavy construction! 👷 🚧
 
