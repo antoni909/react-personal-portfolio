@@ -405,7 +405,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   scrollButton: {
-    color:'#30D5C8',
+    color:'#ff730f',
     position: "fixed",
     fontSize: 60,
     bottom: 20,

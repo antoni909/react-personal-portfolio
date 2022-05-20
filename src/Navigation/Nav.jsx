@@ -14,8 +14,6 @@ import {FaLaptopCode, FaGlobeAmericas, FaHamburger, FaMeteor, FaRobot, FaGlasses
 
 import { scrollEffect } from '../Utils/scrollEffect';
 
-// #ff730f orange color
-
 const Nav = () => {
   const classes = useStyles();
   const landing = useRef(null)
@@ -64,14 +62,9 @@ const Nav = () => {
     <Box>
       <CssBaseline />
       
-      <Box 
-        className={ classes.navMenuContainer }
-      >
-
+      <Box className={ classes.navMenuContainer }>
         <Box className={ classes.navIconMenu } >
-          
           {renderIconMenu()}
-          
           <IconButton
             className={ classes.navHamburgerMenuIcon }
             onClick={ handleClick }
@@ -79,8 +72,6 @@ const Nav = () => {
           >
             <FaHamburger />
           </IconButton>
-
-
         </Box>
 
         <Menu
@@ -98,6 +89,7 @@ const Nav = () => {
       <Outlet/>
       <Home ref={ ref } />
       <Footer ref={ footer }/>
+
     </Box>
   );
 }
