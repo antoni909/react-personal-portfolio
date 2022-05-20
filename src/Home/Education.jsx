@@ -1,5 +1,6 @@
-import RelatedEducation from './RelatedEducation'
-import PreviousExp from './PreviousExp'
+
+// import RelatedEducation from './RelatedEducation'
+// import PreviousExp from './PreviousExp'
 
 // DONE: create class for Box parent and Card child items
 // DONE: create show skills on hover of certificate
@@ -9,10 +10,10 @@ import PreviousExp from './PreviousExp'
 const Education = () => {
   
   return (
-    <>
-      <RelatedEducation />
-      <PreviousExp />
-    </>
+    <div>
+      {/* <RelatedEducation />
+      <PreviousExp /> */}
+    </div>
   );
 }
 

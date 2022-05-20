@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import useStyles from "../Theme/themes";
 import cf_cert from '../Assets/certs/cf_cert.png'
 import cf_icon from '../Assets/images/cf.png'
@@ -50,7 +50,7 @@ const relatedEd = [
   },
 ]
 
-const RelatedEducation = () => {
+const RelatedEducation = forwardRef((props,relatedEdRef) => {
   const classes = useStyles();
 
   const [renderSkill, setRenderSkill] = useState(false)
@@ -107,20 +107,26 @@ const RelatedEducation = () => {
   }
 
   return(
-    <Box className={classes.educationContainer}>
-      <Box className={classes.educationCertsContainer}>
-        { renderRelatedEd( relatedEd ) }
+    <div 
+      id="relatedEduc" 
+      ref={ relatedEdRef 
+    }>
+      <Box className={classes.educationContainer}>
+        <Box className={classes.educationCertsContainer}>
+          { renderRelatedEd( relatedEd ) }
+        </Box>
+        <div className={classes.educationTitleContainer}>
+          <h2 className={classes.educationTitle}>
+            I have aquired skills in Web Development
+          </h2>
+          <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
+          <p className={classes.educationParagraph}>Psst... hover to see the skills I have attained</p>
+          {renderSkill}
+        </div>
       </Box>
-      <div className={classes.educationTitleContainer}>
-        <h2 className={classes.educationTitle}>
-          I have aquired skills in Web Development
-        </h2>
-        <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
-        <p className={classes.educationParagraph}>Psst... hover to see the skills I have attained</p>
-        {renderSkill}
-      </div>
-    </Box>
+    </div>
+
   )
-}
+})
 
 export default RelatedEducation

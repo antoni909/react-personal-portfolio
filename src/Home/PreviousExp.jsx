@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import useStyles from "../Theme/themes";
 
 import uniform_pic from '../Assets/images/uniform_pic.jpg'
@@ -30,7 +31,7 @@ const previousEd = [
   }
 ]
 
-const PreviousExp = () => {
+const PreviousExp = forwardRef((props,previousExpRef) => {
 
   const classes = useStyles();
   const renderPreviousExp = ( list ) => {
@@ -76,16 +77,19 @@ const PreviousExp = () => {
   }
 
   return(
-    <Box className={classes.educationPreviousExpContainer}>
-      <div className={classes.educationPreviousTitleContainer}>
-        <h2 className={classes.educationPrevTitle}>
-          See into my Past Experience
-        </h2>
-        <p className={classes.educationPrevParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
-      </div>
-      { renderPreviousExp( previousEd ) }
-    </Box>
+    <div id="previouse experience" ref={ previousExpRef }>
+      <Box className={classes.educationPreviousExpContainer}>
+        <div className={classes.educationPreviousTitleContainer}>
+          <h2 className={classes.educationPrevTitle}>
+            See into my Past Experience
+          </h2>
+          <p className={classes.educationPrevParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
+        </div>
+        { renderPreviousExp( previousEd ) }
+      </Box>
+    </div>
+
   )
-}
+})
 
 export default PreviousExp
