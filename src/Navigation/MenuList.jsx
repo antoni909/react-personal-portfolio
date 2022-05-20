@@ -5,20 +5,20 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemText';
 import ListItemText from '@mui/material/ListItemText';
-import { FcDocument, FcEngineering } from "react-icons/fc";
+import { FaRegFilePdf, FaRegFileCode } from "react-icons/fa";
 
 const menuItemsList = [
   {
     text: 'Projects', 
     path: <Link style={{ textDecoration: 'none' }} 
     to="/solo_projects">Projects</Link>,
-    menuIcon: <FcEngineering style={{ height: 40, width: 40 }}/>
+    menuIcon: <FaRegFileCode style={{ height: 40, width: 40 }}/>
   },
   {
     text: 'Resume', 
     path: <Link style={{ textDecoration: 'none' }} 
     to="/resume">Resume</Link>,
-    menuIcon: <FcDocument style={{ height: 40, width: 40 }}/>
+    menuIcon: <FaRegFilePdf style={{ height: 40, width: 40 }}/>
   },
 ]
 

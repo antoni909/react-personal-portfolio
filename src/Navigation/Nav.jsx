@@ -10,7 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import { FaGlobeAmericas, FaHamburger, FaMeteor, FaRobot, FaGlasses, FaGraduationCap, FaPencilAlt, FaEye } from 'react-icons/fa';
+import {FaLaptopCode, FaGlobeAmericas, FaHamburger, FaMeteor, FaRobot, FaGlasses, FaGraduationCap, FaPencilAlt, FaEye } from 'react-icons/fa';
 
 import { scrollEffect } from '../Utils/scrollEffect';
 
@@ -29,11 +29,11 @@ const Nav = () => {
   const refArr = [
     { refTarget: landing, icon: <FaMeteor className={ classes.tallMenuIcon } /> },
     { refTarget: about, icon: <FaGlobeAmericas className={ classes.tallMenuIcon } /> },
-    { refTarget: orgProjects, icon: <FaGlasses className={ classes.tallMenuIcon } /> },
+    { refTarget: orgProjects, icon: <FaLaptopCode className={ classes.tallMenuIcon } /> },
     { refTarget: relatedEd, icon: <FaGraduationCap className={ classes.tallMenuIcon } /> },
     { refTarget: previousExp, icon: <FaRobot className={ classes.tallMenuIcon } /> },
     { refTarget: contact, icon: <FaPencilAlt className={ classes.tallMenuIcon } /> },
-    { refTarget: footer, icon: <FaEye className={ classes.tallMenuIcon } /> }
+    { refTarget: footer, icon: <FaGlasses className={ classes.tallMenuIcon } /> }
   ]
   const [anchor, setAnchor] = useState(null);
   const open = Boolean(anchor);
@@ -68,9 +68,10 @@ const Nav = () => {
         className={ classes.navMenuContainer }
       >
 
-        {/* Icon List */}
         <Box className={ classes.navIconMenu } >
-
+          
+          {renderIconMenu()}
+          
           <IconButton
             className={ classes.navHamburgerMenuIcon }
             onClick={ handleClick }
@@ -79,7 +80,6 @@ const Nav = () => {
             <FaHamburger />
           </IconButton>
 
-          {renderIconMenu()}
 
         </Box>
 
