@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Home from '../Home/Home'
 import Footer from '../Footer/Footer.jsx'
 import MenuList from '../Navigation/MenuList'
@@ -10,21 +10,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import { FaHamburger } from 'react-icons/fa';
+import { FaGlobeAmericas, FaHamburger, FaMeteor, FaRobot, FaGlasses, FaGraduationCap, FaPencilAlt, FaEye } from 'react-icons/fa';
 
 import { scrollEffect } from '../Utils/scrollEffect';
 
+// #ff730f orange color
+
 const Nav = () => {
   const classes = useStyles();
-  const [anchor, setAnchor] = useState(null);
-  const open = Boolean(anchor);
-  const handleClick = (event) => {
-    setAnchor(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchor(null);
-  };
-
   const landing = useRef(null)
   const about = useRef(null)
   const orgProjects = useRef(null)
@@ -32,8 +25,40 @@ const Nav = () => {
   const previousExp = useRef(null)
   const contact = useRef(null)
   const footer = useRef(null)
+  const ref = useRef({ landing,about,orgProjects,relatedEd,previousExp,contact })
+  const refArr = [
+    { refTarget: landing, icon: <FaMeteor className={ classes.tallMenuIcon } /> },
+    { refTarget: about, icon: <FaGlobeAmericas className={ classes.tallMenuIcon } /> },
+    { refTarget: orgProjects, icon: <FaGlasses className={ classes.tallMenuIcon } /> },
+    { refTarget: relatedEd, icon: <FaGraduationCap className={ classes.tallMenuIcon } /> },
+    { refTarget: previousExp, icon: <FaRobot className={ classes.tallMenuIcon } /> },
+    { refTarget: contact, icon: <FaPencilAlt className={ classes.tallMenuIcon } /> },
+    { refTarget: footer, icon: <FaEye className={ classes.tallMenuIcon } /> }
+  ]
+  const [anchor, setAnchor] = useState(null);
+  const open = Boolean(anchor);
 
-  const ref = useRef({landing,about,orgProjects,relatedEd,previousExp,contact})
+  const handleClick = (event) => {
+    setAnchor(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchor(null);
+  };
+  const renderIconMenu = () => {
+    return(
+      <>
+        { refArr.map( (refItem,idx) => (
+            <IconButton
+            key={ idx } 
+            onClick={ ()=> scrollEffect(refItem.refTarget) }
+            >
+              { refItem.icon }
+            </IconButton >
+          ))
+        }
+      </>
+    )
+  }
 
   return (
     <Box>
@@ -45,23 +70,17 @@ const Nav = () => {
 
         {/* Icon List */}
         <Box className={ classes.navIconMenu } >
+
           <IconButton
             className={ classes.navHamburgerMenuIcon }
             onClick={ handleClick }
-            sx={{ fontSize: 80, color:'#30D5C8' }}
+            sx={{ fontSize: 60, color:'#30D5C8' }}
           >
             <FaHamburger />
           </IconButton>
-          <ul style={{color:'white', fontSize:'22px'}}>
 
-            <li onClick={()=> scrollEffect(landing)} className="link">Landing</li>
-            <li onClick={()=> scrollEffect(about)} className="link">About</li>
-            <li onClick={()=> scrollEffect(orgProjects)} className="link">OrgProjects</li>
-            <li onClick={()=> scrollEffect(relatedEd)} className="link">RelatedEd</li>
-            <li onClick={()=> scrollEffect(previousExp)} className="link">PreviousExp</li>
-            <li onClick={()=> scrollEffect(contact)} className="link">Contact</li>
-            <li onClick={()=> scrollEffect(footer)} className="link">Footer</li>
-          </ul>
+          {renderIconMenu()}
+
         </Box>
 
         <Menu

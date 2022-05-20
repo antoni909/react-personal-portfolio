@@ -473,6 +473,13 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap', 
     justifyContent: 'space-between',
   },
+  tallMenuIcon:{
+    color:'#ff730f',
+    fontSize:'60px',
+    '&:hover':{
+      transform:'scale(1.5)'
+    },
+  },
   toHomeButton: {
     color:'#30D5C8',
     bottom: 20,
