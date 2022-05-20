@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import useStyles from "../Theme/themes";
-
 import cf_cert from '../Assets/certs/cf_cert.png'
 import cf_icon from '../Assets/images/cf.png'
 import courseraUX_cert  from "../Assets/certs/courseraUX_cert.jpg";
@@ -9,17 +8,17 @@ import sololearn_logo  from "../Assets/logos/sololearn_logo.png";
 import hr_basic_js from '../Assets/certs/hr_basic_js.png'
 import soloLearn_CSS from '../Assets/certs/soloLearn_CSS.jpg'
 import hr_logo from '../Assets/images/hr_logo.jpeg'
-import uniform_pic from '../Assets/images/uniform_pic.jpg'
-import usmc_logo from '../Assets/images/usmc_logo.jpg'
-import wou_logo from '../Assets/images/wou_logo.png'
-import wou_soccer from '../Assets/images/wou_soccer.jpg'
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import Carousel from 'react-bootstrap/Carousel';
+
+// DONE: create class for Box parent and Card child items
+// DONE: create show skills on hover of certificate
+// DONE: popup text overflows into next component when hover over CF cert
+// TODO: create move renderPreviousExp and renderRelatedEd into their own components PreviousExp and RelatedEducation, as children of education component
 
 const relatedEd = [
   {
@@ -55,34 +54,12 @@ const relatedEd = [
     skill:'CSS',
   },
 ]
-const previousEd = [
-  {
-    icon: wou_logo, 
-    certification: wou_soccer, 
-    graduation: '2008 to ',
-    name: 'Wester Oregon University',
-    url: 'https://wou.edu/',
-    skill:'B.S. Education',
-  },
-  {
-    icon: usmc_logo, 
-    certification: uniform_pic, 
-    graduation: '2015 to 2020',
-    name: 'United States Marine Corps',
-    url: 'https://www.marines.com/',
-    skill:'Marine',
-  }
-]
 
-// DONE: create class for Box parent and Card child items
-// DONE: create show skills on hover of certificate
-// FIX: popup text overflows into next component when hover over CF cert
-
-const Education = () => {
-  
+const RelatedEducation = forwardRef((props,relatedEdRef) => {
   const classes = useStyles();
+
   const [renderSkill, setRenderSkill] = useState(false)
-  
+
   const renderSkills = (targetSkill) => {
     const hackerRank = 'JavaScript Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.'
     const georgiaTech = 'Usability User Experience (UX), User Experience Design (UXD), User Interface'
@@ -134,74 +111,27 @@ const Education = () => {
     ))
   }
 
-  const renderPreviousExp = ( list ) => {
-    return (
-      <div className={classes.educationPrevCarouselContainer}>
-        <Carousel
-          className={classes.educationPrevExpCarousel}
-          interval={null}
-        > 
-          {list.map(item =>(
-            <Carousel.Item
-              key={ item.name }
-            >
-                <Card
-                  className={classes.educationPreviousExpCard}
-                  key={ item.name }
-                >
-                  <CardHeader
-                    title={ item.name }
-                    subheader={`${item.skill}, ${item.graduation}`}
-                    avatar={
-                      <Avatar aria-label={item.name}>
-                        <img
-                          alt="logo"
-                          height="40"
-                          onClick={()=> window.open(item.url)}
-                          src={item.icon}
-                        />
-                      </Avatar>
-                    }
-                  />
-                  <img
-                    className="d-block w-100"
-                    src={ item.certification }
-                    alt={`${item.certification} certification`}
-                  />
-                </Card>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </div>
-    )
-  }
-
-  return (
-    <>
+  return(
+    <div 
+      id="relatedEduc" 
+      ref={ relatedEdRef 
+    }>
       <Box className={classes.educationContainer}>
         <Box className={classes.educationCertsContainer}>
           { renderRelatedEd( relatedEd ) }
         </Box>
         <div className={classes.educationTitleContainer}>
           <h2 className={classes.educationTitle}>
-            I have aquired skills in Full Stack Web Development
+            I have aquired skills in Web Development
           </h2>
           <p className={classes.educationParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
           <p className={classes.educationParagraph}>Psst... hover to see the skills I have attained</p>
           {renderSkill}
         </div>
       </Box>
-      <Box className={classes.educationPreviousExpContainer}>
-        <div className={classes.educationPreviousTitleContainer}>
-          <h2 className={classes.educationPrevTitle}>
-            See into my Past Experience
-          </h2>
-          <p className={classes.educationPrevParagraph}> My sights are locked-in on cultivating a growth mindset and continue growing as professional Web Developer.</p>
-        </div>
-        { renderPreviousExp( previousEd ) }
-      </Box>
-    </>
-  );
-}
+    </div>
 
-export default Education;
+  )
+})
+
+export default RelatedEducation
