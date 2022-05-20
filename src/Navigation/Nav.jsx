@@ -10,7 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import {FaLaptopCode, FaGlobeAmericas, FaHamburger, FaMeteor, FaRobot, FaGlasses, FaGraduationCap, FaPencilAlt, FaEye } from 'react-icons/fa';
+import {FaLaptopCode, FaGlobeAmericas, FaHamburger, FaMeteor, FaRobot, FaGlasses, FaGraduationCap, FaPencilAlt } from 'react-icons/fa';
 
 import { scrollEffect } from '../Utils/scrollEffect';
 
