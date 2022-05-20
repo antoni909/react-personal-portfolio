@@ -5,6 +5,7 @@ import { FaChevronCircleUp } from 'react-icons/fa';
 
 // DONE: button must remain Fixed on the screen
 // DONE: fix Scroll Button visibility
+
 const ScrollToTop = () => {
   const [showScroll, setShowScroll] = useState(false)
   const classes = useStyles();
