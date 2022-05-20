@@ -49,8 +49,10 @@ const Nav = () => {
             <IconButton
             key={ idx } 
             onClick={ ()=> scrollEffect(refItem.refTarget) }
+            aria-label={`${refItem.refTarget.current && refItem.refTarget.current.id} icon`}
             >
               { refItem.icon }
+              {console.log(refItem.refTarget.current && refItem.refTarget.current.id)}
             </IconButton >
           ))
         }
@@ -69,6 +71,7 @@ const Nav = () => {
             className={ classes.navHamburgerMenuIcon }
             onClick={ handleClick }
             sx={{ fontSize: 60, color:'#30D5C8' }}
+            aria-label="hamburger menu icon"
           >
             <FaHamburger />
           </IconButton>
