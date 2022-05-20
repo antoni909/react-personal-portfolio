@@ -1,7 +1,6 @@
 import { forwardRef } from 'react'
 import About from './About'
 import Contact from '../Contact/Contact'
-// import Education from './Education'
 import RelatedEducation from './RelatedEducation'
 import PreviousExp from './PreviousExp'
 import Landing from './Landing'
