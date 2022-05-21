@@ -15,11 +15,13 @@ GitHub Wallpaper - [WalpaperCave](https://wallpapercave.com/w/wp3082268)
 
 tinypng.com - [smart WebP, PNG, and JPEG compression](https://tinypng.com)
 
-OctoKit.js - [The all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.](https://github.com/octokit/octokit.js/#usage)
+Adobe Acrobat - [compress PDF online tool lets you compress PDF files](https://www.adobe.com/acrobat/online/compress-pdf.html)
+
+OctoKit.js - [the all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.](https://github.com/octokit/octokit.js/#usage)
 
 Material UI - [beautiful components](https://mui.com/)
 
-React-PDF - [Display PDFs in your React app as easily as if they were images.](https://www.npmjs.com/package/react-pdf)
+React-PDF - [display PDFs in your React app as easily as if they were images.](https://www.npmjs.com/package/react-pdf)
 
 ## Attributions
 
