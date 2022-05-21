@@ -52,7 +52,6 @@ const Nav = () => {
             aria-label={`${refItem.refTarget.current && refItem.refTarget.current.id} icon`}
             >
               { refItem.icon }
-              {console.log(refItem.refTarget.current && refItem.refTarget.current.id)}
             </IconButton >
           ))
         }

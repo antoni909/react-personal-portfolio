@@ -13,12 +13,12 @@ export const useOctokit = (url) => {
       let response
   
       if(cache[url]){
-        console.log('cache hit')
+        // console.log('cache hit')
         const data = cache[url]
         setData(data)
         setPending(false)
       }else{
-          console.log('cache miss')
+          // console.log('cache miss')
           response = await octokit.request(url, {org: 'org'})
           cache[url] = response.data
           if(response.status === 200){

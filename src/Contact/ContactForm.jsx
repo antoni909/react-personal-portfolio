@@ -30,7 +30,6 @@ const ContactForm = () => {
         email,
         message
       }
-      console.log('templateParams',templateParams)
       emailjs.send(
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID, 
